@@ -12,6 +12,7 @@ export default function AdminDashboard() {
     total_kasus: 0
   });
   const [user, setUser] = useState(null);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const router = useRouter();
 
@@ -43,8 +44,9 @@ export default function AdminDashboard() {
 
   return (
     <div className="dash-layout text-slate-900">
+      <div className={`mobile-overlay ${isSidebarOpen ? 'open' : ''}`} onClick={() => setIsSidebarOpen(false)}></div>
       {/* Sidebar Admin */}
-      <aside className="dash-sidebar hidden lg:flex">
+      <aside className={`dash-sidebar ${isSidebarOpen ? 'open' : ''}`}>
         <div className="dash-sidebar-header">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-xl bg-emerald-600 flex items-center justify-center font-bold text-xl">A</div>
@@ -71,7 +73,17 @@ export default function AdminDashboard() {
 
       {/* Main Content */}
       <main className="dash-content">
-        <header className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-12 animate-fadeIn">
+        <div className="mobile-topbar">
+          <div className="flex items-center gap-3">
+             <div className="w-8 h-8 rounded-lg bg-emerald-600 flex items-center justify-center font-bold text-white shadow-lg">A</div>
+             <span className="font-extrabold text-slate-800">Portal Admin</span>
+          </div>
+          <button onClick={() => setIsSidebarOpen(true)} className="p-2 -mr-2 text-slate-500 hover:text-slate-800 focus:outline-none">
+             <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" /></svg>
+          </button>
+        </div>
+
+        <header className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-12 animate-fadeIn mt-4 lg:mt-0">
           <div>
             <h2 className="text-xs font-bold text-emerald-600 uppercase tracking-[0.2em] mb-1">Kontrol Panel</h2>
             <h1 className="text-3xl font-extrabold text-slate-900 tracking-tight">Ringkasan Sistem</h1>

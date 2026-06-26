@@ -15,6 +15,7 @@ function SiswaDashboardContent() {
   const router = useRouter();
 
   const [activeTab, setActiveTab] = useState('dashboard');
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [schedules, setSchedules] = useState([]);
   const [myBookings, setMyBookings] = useState([]);
   const [unreadCounts, setUnreadCounts] = useState({});
@@ -193,8 +194,10 @@ function SiswaDashboardContent() {
 
   return (
     <div className="dash-layout">
+      <div className={`mobile-overlay ${isSidebarOpen ? 'open' : ''}`} onClick={() => setIsSidebarOpen(false)}></div>
+      
       {/* Sidebar Profesional */}
-      <aside className="dash-sidebar hidden lg:flex">
+      <aside className={`dash-sidebar ${isSidebarOpen ? 'open' : ''}`}>
         <div className="dash-sidebar-header">
           <div className="flex items-center gap-4">
             <AvatarUpload user={user} onUploadSuccess={setUser} />
@@ -206,9 +209,9 @@ function SiswaDashboardContent() {
         </div>
 
         <nav className="dash-sidebar-nav">
-          <SidebarLink active={activeTab === 'dashboard'} icon={<HomeIcon />} label="Beranda" onClick={() => setActiveTab('dashboard')} />
-          <SidebarLink active={activeTab === 'booking'} icon={<CalendarIcon />} label="Booking Guru" onClick={() => setActiveTab('booking')} />
-          <SidebarLink active={activeTab === 'profile'} icon={<UserIcon />} label="Profil Saya" onClick={() => setActiveTab('profile')} />
+          <SidebarLink active={activeTab === 'dashboard'} icon={<HomeIcon />} label="Beranda" onClick={() => { setActiveTab('dashboard'); setIsSidebarOpen(false); }} />
+          <SidebarLink active={activeTab === 'booking'} icon={<CalendarIcon />} label="Booking Guru" onClick={() => { setActiveTab('booking'); setIsSidebarOpen(false); }} />
+          <SidebarLink active={activeTab === 'profile'} icon={<UserIcon />} label="Profil Saya" onClick={() => { setActiveTab('profile'); setIsSidebarOpen(false); }} />
         </nav>
 
         <div className="p-6 border-t border-slate-800/50">
@@ -220,6 +223,16 @@ function SiswaDashboardContent() {
 
       {/* Main Area */}
       <main className="dash-content">
+        <div className="mobile-topbar">
+          <div className="flex items-center gap-3">
+             <div className="w-8 h-8 rounded-lg bg-emerald-600 flex items-center justify-center font-bold text-white shadow-lg">E</div>
+             <span className="font-extrabold text-slate-800">E-Konseling</span>
+          </div>
+          <button onClick={() => setIsSidebarOpen(true)} className="p-2 -mr-2 text-slate-500 hover:text-slate-800 focus:outline-none">
+             <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" /></svg>
+          </button>
+        </div>
+
         <NotificationBanner />
 
         {/* Top Header */}

@@ -19,6 +19,7 @@ function GuruDashboardContent() {
   const { isAuthorized, isChecking } = useAuthGuard("guru");
   const [namaGuru, setNamaGuru] = useState("Guru BK");
   const [activeTab, setActiveTab] = useState('antrean');
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [user, setUser] = useState(null);
   const [queueTab, setQueueTab] = useState('menunggu');
   const router = useRouter();
@@ -228,10 +229,22 @@ function GuruDashboardContent() {
 
   return (
     <div className="dash-layout">
+      <div className={`mobile-overlay ${isSidebarOpen ? 'open' : ''}`} onClick={() => setIsSidebarOpen(false)}></div>
+      
       {/* Sidebar - Consistent styling */}
-      <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} totalUnread={totalUnread} onLogout={handleLogout} />
+      <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} totalUnread={totalUnread} onLogout={handleLogout} isOpen={isSidebarOpen} setIsOpen={setIsSidebarOpen} />
 
       <main className="dash-content">
+        <div className="mobile-topbar">
+          <div className="flex items-center gap-3">
+             <div className="w-8 h-8 rounded-lg bg-emerald-600 flex items-center justify-center font-bold text-white shadow-lg">E</div>
+             <span className="font-extrabold text-slate-800">E-Konseling</span>
+          </div>
+          <button onClick={() => setIsSidebarOpen(true)} className="p-2 -mr-2 text-slate-500 hover:text-slate-800 focus:outline-none">
+             <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" /></svg>
+          </button>
+        </div>
+
         <div className="max-w-7xl mx-auto space-y-10 animate-slide-up">
           <DashboardHeader namaGuru={namaGuru} user={user} onUpdateUser={setUser} />
 

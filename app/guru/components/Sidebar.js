@@ -2,7 +2,7 @@
 import { useRouter } from "next/navigation";
 import { apiFetch } from "../../../lib/apiFetch";
 
-export default function Sidebar({ activeTab, setActiveTab, totalUnread }) {
+export default function Sidebar({ activeTab, setActiveTab, totalUnread, isOpen, setIsOpen }) {
   const router = useRouter();
 
   const handleLogout = async () => {
@@ -23,7 +23,7 @@ export default function Sidebar({ activeTab, setActiveTab, totalUnread }) {
   ];
 
   return (
-    <aside className="dash-sidebar">
+    <aside className={`dash-sidebar ${isOpen ? 'open' : ''}`}>
       <div className="dash-sidebar-header">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-xl bg-emerald-600 flex items-center justify-center font-bold text-white text-xl shadow-lg shadow-emerald-900/20">E</div>
@@ -38,7 +38,7 @@ export default function Sidebar({ activeTab, setActiveTab, totalUnread }) {
         {menuItems.map((tab) => (
           <button
             key={tab.id}
-            onClick={() => setActiveTab(tab.id)}
+            onClick={() => { setActiveTab(tab.id); if(setIsOpen) setIsOpen(false); }}
             className={`dash-nav-item ${activeTab === tab.id ? 'active' : ''}`}
           >
             <span>{tab.icon}</span>
