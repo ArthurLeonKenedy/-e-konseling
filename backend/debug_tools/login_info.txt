@@ -1,0 +1,23 @@
+﻿=== DAFTAR AKUN LOGIN E-KONSELING ===
+
+--- ADMIN ---
+Nama: Admin Sistem
+
+--- GURU BK ---
+Nama: ELDATINA S.Pd
+Nama: SUSIYATUN S.Pd
+Nama: DALINA S.Pd
+Nama: RENI JULIANTI S.Pd
+Nama: ELDATINA S.Pd
+Nama: SUSIYATUN S.Pd
+Nama: DALINA S.Pd
+Nama: RENI JULIANTI S.Pd
+
+--- SISWA (5 contoh) ---
+Nama: ABDURAHMAN | Kelas: X AKT 1
+Nama: Afta Alfahrezi | Kelas: X AKT 1
+Nama: AINUR SABILA | Kelas: X AKT 1
+Nama: ANGGUN PRATAMA | Kelas: X AKT 1
+Nama: Arya Agil Musyafa | Kelas: X AKT 1
+
+Total siswa: 749

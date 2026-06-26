@@ -1,0 +1,32 @@
+﻿=======================================================
+  E-KONSELING  -  SMK NEGERI 1 PONTIANAK
+  Cara Instalasi & Menjalankan Aplikasi
+=======================================================
+
+PRASYARAT:
+- Node.js (v18+) dan npm
+- PHP (v8.1+) dan Composer
+- MySQL / phpMyAdmin
+
+=== FRONTEND (Next.js) ===
+1. Buka terminal, masuk ke folder ini (ekonseling_export)
+2. Jalankan: npm install
+3. Jalankan: npm run dev
+4. Buka browser: http://localhost:3000
+
+=== BACKEND (Laravel) ===
+1. Buka terminal baru, masuk ke folder: backend/
+2. Jalankan: composer install
+3. Salin file .env: cp .env.example .env
+4. Edit .env -> isi DB_DATABASE, DB_USERNAME, DB_PASSWORD
+5. Jalankan: php artisan key:generate
+6. Jalankan: php artisan migrate --seed
+7. Jalankan: php artisan serve
+8. Backend berjalan di: http://localhost:8000
+
+PENTING:
+- Frontend dan Backend harus dijalankan BERSAMAAN
+- di 2 jendela terminal yang berbeda
+
+=======================================================
+password123

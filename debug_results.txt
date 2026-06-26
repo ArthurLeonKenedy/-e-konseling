@@ -1,0 +1,17 @@
+--- ALL USERS WITH ROLE GURU ---
+ID: 1, Name: [ELDATINA S.Pd]
+ID: 2, Name: [SUSIYATUN S.Pd]
+ID: 3, Name: [DALINA S.Pd]
+ID: 4, Name: [RENI JULIANTI S.Pd]
+ID: 753, Name: [ELDATINA S.Pd]
+ID: 754, Name: [SUSIYATUN S.Pd]
+ID: 755, Name: [DALINA S.Pd]
+ID: 756, Name: [RENI JULIANTI S.Pd]
+ID: 759, Name: [ELDATINA S.P]
+ID: 760, Name: [BU BUDI]
+ID: 761, Name: [PAK BAMBANG]
+
+--- ALL SCHEDULES ---
+ID: 1, Guru ID: 759, Status: Tersedia
+ID: 2, Guru ID: 760, Status: Tersedia
+ID: 3, Guru ID: 761, Status: Tersedia

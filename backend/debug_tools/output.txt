@@ -1,0 +1,12 @@
+﻿=== CEK PASSWORD SAAT INI ===
+password123 COCOK Γ£ô untuk siswa: ABDURAHMAN
+
+
+=== CONTOH DATA LOGIN SISWA ===
+Nama: [ABDURAHMAN] | Kelas: [X AKT 1]
+Nama: [Afta Alfahrezi] | Kelas: [X AKT 1]
+Nama: [AINUR SABILA] | Kelas: [X AKT 1]
+Nama: [ANGGUN PRATAMA] | Kelas: [X AKT 1]
+Nama: [Arya Agil Musyafa] | Kelas: [X AKT 1]
+
+Password: password123

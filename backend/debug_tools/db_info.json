@@ -1,0 +1,135 @@
+{
+    "siswa": [
+        {
+            "name": "ABDURAHMAN",
+            "kelas": "X AKT 1",
+            "nisn": "1234567890"
+        },
+        {
+            "name": "AINUR SABILA",
+            "kelas": "X AKT 1",
+            "nisn": "1234567890"
+        },
+        {
+            "name": "ANGGUN PRATAMA",
+            "kelas": "X AKT 1",
+            "nisn": "1234567890"
+        },
+        {
+            "name": "ASRI REZA RAMADHANI",
+            "kelas": "X AKT 1",
+            "nisn": "1234567890"
+        },
+        {
+            "name": "ATIQAH KHAIRANIKA",
+            "kelas": "X AKT 1",
+            "nisn": "1234567890"
+        },
+        {
+            "name": "AZWA RIMARNISA FAYOLA",
+            "kelas": "X AKT 1",
+            "nisn": "1234567890"
+        },
+        {
+            "name": "Afta Alfahrezi",
+            "kelas": "X AKT 1",
+            "nisn": "1234567890"
+        },
+        {
+            "name": "Arya Agil Musyafa",
+            "kelas": "X AKT 1",
+            "nisn": "1234567890"
+        },
+        {
+            "name": "Citra Tri Yulia",
+            "kelas": "X AKT 1",
+            "nisn": "1234567890"
+        },
+        {
+            "name": "DELVIA RIZKY APRIL YANTI",
+            "kelas": "X AKT 1",
+            "nisn": "1234567890"
+        },
+        {
+            "name": "FITRI ARWANTI",
+            "kelas": "X AKT 1",
+            "nisn": "1234567890"
+        },
+        {
+            "name": "GUSTI PUTRA PRATAMA",
+            "kelas": "X AKT 1",
+            "nisn": "1234567890"
+        },
+        {
+            "name": "HIDAYATI SOLEHA",
+            "kelas": "X AKT 1",
+            "nisn": "1234567890"
+        },
+        {
+            "name": "Ilham Al farizi",
+            "kelas": "X AKT 1",
+            "nisn": "1234567890"
+        },
+        {
+            "name": "Khairina Badriah",
+            "kelas": "X AKT 1",
+            "nisn": "1234567890"
+        },
+        {
+            "name": "MUHAMMAD DESTA PRATAMA",
+            "kelas": "X AKT 1",
+            "nisn": "1234567890"
+        },
+        {
+            "name": "Meiki Hessowa Aril",
+            "kelas": "X AKT 1",
+            "nisn": "1234567890"
+        },
+        {
+            "name": "Murhana Wahidah",
+            "kelas": "X AKT 1",
+            "nisn": "1234567890"
+        },
+        {
+            "name": "NAZRIN ANANDA PUTRA",
+            "kelas": "X AKT 1",
+            "nisn": "1234567890"
+        },
+        {
+            "name": "NELIS LIANA PUTRI",
+            "kelas": "X AKT 1",
+            "nisn": "1234567890"
+        }
+    ],
+    "guru": [
+        {
+            "name": "ELDATINA S.Pd"
+        },
+        {
+            "name": "SUSIYATUN S.Pd"
+        },
+        {
+            "name": "DALINA S.Pd"
+        },
+        {
+            "name": "RENI JULIANTI S.Pd"
+        },
+        {
+            "name": "ELDATINA S.Pd"
+        },
+        {
+            "name": "SUSIYATUN S.Pd"
+        },
+        {
+            "name": "DALINA S.Pd"
+        },
+        {
+            "name": "RENI JULIANTI S.Pd"
+        }
+    ],
+    "status": {
+        "konselings": 0,
+        "chats": 0,
+        "surat_panggilans": 0
+    }
+}

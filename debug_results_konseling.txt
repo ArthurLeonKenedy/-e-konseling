@@ -1,0 +1,2 @@
+--- KONSELLING DATA ---
+ID: 5, Siswa: Arya Agil Musyafa, Guru: ELDATINA S.Pd, Status: Ditolak

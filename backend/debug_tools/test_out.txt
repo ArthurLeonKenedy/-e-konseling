@@ -1,0 +1,59 @@
+Users:
+ID: 1, Name: ELDATINA S.Pd, Role: guru
+ID: 2, Name: SUSIYATUN S.Pd, Role: guru
+ID: 3, Name: DALINA S.Pd, Role: guru
+ID: 4, Name: RENI JULIANTI S.Pd, Role: guru
+ID: 753, Name: ELDATINA S.Pd, Role: guru
+ID: 754, Name: SUSIYATUN S.Pd, Role: guru
+ID: 755, Name: DALINA S.Pd, Role: guru
+ID: 756, Name: RENI JULIANTI S.Pd, Role: guru
+
+Schedules:
+ID: 1, Guru ID: 1, Guru Name (stored if any): N/A
+ID: 2, Guru ID: 1, Guru Name (stored if any): N/A
+ID: 3, Guru ID: 1, Guru Name (stored if any): N/A
+ID: 4, Guru ID: 1, Guru Name (stored if any): N/A
+ID: 5, Guru ID: 1, Guru Name (stored if any): N/A
+ID: 6, Guru ID: 2, Guru Name (stored if any): N/A
+ID: 7, Guru ID: 2, Guru Name (stored if any): N/A
+ID: 8, Guru ID: 2, Guru Name (stored if any): N/A
+ID: 9, Guru ID: 2, Guru Name (stored if any): N/A
+ID: 10, Guru ID: 2, Guru Name (stored if any): N/A
+ID: 11, Guru ID: 3, Guru Name (stored if any): N/A
+ID: 12, Guru ID: 3, Guru Name (stored if any): N/A
+ID: 13, Guru ID: 3, Guru Name (stored if any): N/A
+ID: 14, Guru ID: 3, Guru Name (stored if any): N/A
+ID: 15, Guru ID: 3, Guru Name (stored if any): N/A
+ID: 16, Guru ID: 4, Guru Name (stored if any): N/A
+ID: 17, Guru ID: 4, Guru Name (stored if any): N/A
+ID: 18, Guru ID: 4, Guru Name (stored if any): N/A
+ID: 19, Guru ID: 4, Guru Name (stored if any): N/A
+ID: 20, Guru ID: 4, Guru Name (stored if any): N/A
+ID: 21, Guru ID: 753, Guru Name (stored if any): N/A
+ID: 22, Guru ID: 753, Guru Name (stored if any): N/A
+ID: 23, Guru ID: 753, Guru Name (stored if any): N/A
+ID: 24, Guru ID: 753, Guru Name (stored if any): N/A
+ID: 25, Guru ID: 753, Guru Name (stored if any): N/A
+ID: 26, Guru ID: 754, Guru Name (stored if any): N/A
+ID: 27, Guru ID: 754, Guru Name (stored if any): N/A
+ID: 28, Guru ID: 754, Guru Name (stored if any): N/A
+ID: 29, Guru ID: 754, Guru Name (stored if any): N/A
+ID: 30, Guru ID: 754, Guru Name (stored if any): N/A
+ID: 31, Guru ID: 755, Guru Name (stored if any): N/A
+ID: 32, Guru ID: 755, Guru Name (stored if any): N/A
+ID: 33, Guru ID: 755, Guru Name (stored if any): N/A
+ID: 34, Guru ID: 755, Guru Name (stored if any): N/A
+ID: 35, Guru ID: 755, Guru Name (stored if any): N/A
+ID: 36, Guru ID: 756, Guru Name (stored if any): N/A
+ID: 37, Guru ID: 756, Guru Name (stored if any): N/A
+ID: 38, Guru ID: 756, Guru Name (stored if any): N/A
+ID: 39, Guru ID: 756, Guru Name (stored if any): N/A
+ID: 40, Guru ID: 756, Guru Name (stored if any): N/A
+
+Konseling:
+ID: 10, Siswa ID: 5, Guru ID: 1, Topik: [Akademik] bla bla bla
+ID: 11, Siswa ID: 5, Guru ID: 1, Topik: [Akademik] bla bla bla
+ID: 12, Siswa ID: 5, Guru ID: 1, Topik: [Akademik] bl
+ID: 14, Siswa ID: 5, Guru ID: 1, Topik: Test bug
+ID: 15, Siswa ID: 3, Guru ID: 3, Topik: [Lainnya] bla bla bla bla
+ID: 16, Siswa ID: 3, Guru ID: 3, Topik: [Lainnya] bla bla bla bla

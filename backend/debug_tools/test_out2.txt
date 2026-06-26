@@ -1,0 +1,1 @@
+{"success":true,"message":"Permintaan konseling berhasil dikirim!","data":{"siswa_id":5,"guru_id":4,"tanggal":"2026-06-12","waktu":"10:00","topik":"Test 2","status":"Menunggu Konfirmasi","updated_at":"2026-06-10T01:28:37.000000Z","created_at":"2026-06-10T01:28:37.000000Z","id":4}}

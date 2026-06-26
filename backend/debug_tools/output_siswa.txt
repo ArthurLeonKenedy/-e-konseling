@@ -1,0 +1,2250 @@
+﻿=== DAFTAR SISWA ===
+Nama : ABDURAHMAN
+Kelas: X AKT 1
+---
+Nama : Afta Alfahrezi
+Kelas: X AKT 1
+---
+Nama : AINUR SABILA
+Kelas: X AKT 1
+---
+Nama : ANGGUN PRATAMA
+Kelas: X AKT 1
+---
+Nama : Arya Agil Musyafa
+Kelas: X AKT 1
+---
+Nama : ASRI REZA RAMADHANI
+Kelas: X AKT 1
+---
+Nama : ATIQAH KHAIRANIKA
+Kelas: X AKT 1
+---
+Nama : AZWA RIMARNISA FAYOLA
+Kelas: X AKT 1
+---
+Nama : Citra Tri Yulia
+Kelas: X AKT 1
+---
+Nama : DELVIA RIZKY APRIL YANTI
+Kelas: X AKT 1
+---
+Nama : FITRI ARWANTI
+Kelas: X AKT 1
+---
+Nama : GUSTI PUTRA PRATAMA
+Kelas: X AKT 1
+---
+Nama : HIDAYATI SOLEHA
+Kelas: X AKT 1
+---
+Nama : Ilham Al farizi
+Kelas: X AKT 1
+---
+Nama : Khairina Badriah
+Kelas: X AKT 1
+---
+Nama : Meiki Hessowa Aril
+Kelas: X AKT 1
+---
+Nama : MUHAMMAD DESTA PRATAMA
+Kelas: X AKT 1
+---
+Nama : Murhana Wahidah
+Kelas: X AKT 1
+---
+Nama : NAZRIN ANANDA PUTRA
+Kelas: X AKT 1
+---
+Nama : NELIS LIANA PUTRI
+Kelas: X AKT 1
+---
+Nama : Nova Hijria Ningsih
+Kelas: X AKT 1
+---
+Nama : NUR HAZIZAH
+Kelas: X AKT 1
+---
+Nama : ORIZA QURROTUL AIN
+Kelas: X AKT 1
+---
+Nama : PUTRA RAMADHAN
+Kelas: X AKT 1
+---
+Nama : Putri Maya
+Kelas: X AKT 1
+---
+Nama : RICHA PUTRI
+Kelas: X AKT 1
+---
+Nama : SELVA
+Kelas: X AKT 1
+---
+Nama : SYAHID MAULANA
+Kelas: X AKT 1
+---
+Nama : Syakila Anggraini
+Kelas: X AKT 1
+---
+Nama : syakirah fauziah
+Kelas: X AKT 1
+---
+Nama : Sylvia Anggreni
+Kelas: X AKT 1
+---
+Nama : TAUFIT HIDAYAT
+Kelas: X AKT 1
+---
+Nama : Viya Aprillia
+Kelas: X AKT 1
+---
+Nama : YASIRATIL ABADIYAH
+Kelas: X AKT 1
+---
+Nama : AGUSTIANA
+Kelas: X AKT 2
+---
+Nama : Aira Ismaliyana
+Kelas: X AKT 2
+---
+Nama : ALDO MARCELINO PUTRA KAMAL
+Kelas: X AKT 2
+---
+Nama : ANUGERAH DWI PUTRI
+Kelas: X AKT 2
+---
+Nama : Asyfa Mauliza
+Kelas: X AKT 2
+---
+Nama : Aulia Angelica
+Kelas: X AKT 2
+---
+Nama : CHELCIAE
+Kelas: X AKT 2
+---
+Nama : CHEVERLY VERANDRA MICHAELA
+Kelas: X AKT 2
+---
+Nama : Divina Ziw Adventa
+Kelas: X AKT 2
+---
+Nama : Felix Febrian
+Kelas: X AKT 2
+---
+Nama : FERNANDO OLA
+Kelas: X AKT 2
+---
+Nama : GRACEA AJENG TRI KURNIASARI
+Kelas: X AKT 2
+---
+Nama : JUFIN CRISTIAN
+Kelas: X AKT 2
+---
+Nama : JULIANA
+Kelas: X AKT 2
+---
+Nama : KARELITA GEBIOLA NAVARET
+Kelas: X AKT 2
+---
+Nama : Maulidia Syahrani
+Kelas: X AKT 2
+---
+Nama : MUHAMMAD LUTFI
+Kelas: X AKT 2
+---
+Nama : NADIA MORISTA
+Kelas: X AKT 2
+---
+Nama : Nayla Zahwa Nantama
+Kelas: X AKT 2
+---
+Nama : NURLAELA KHOMARIYAH
+Kelas: X AKT 2
+---
+Nama : PUTRI DEMI RAMADANI
+Kelas: X AKT 2
+---
+Nama : RA`UF RAFIQ MAGHRIBI
+Kelas: X AKT 2
+---
+Nama : RAFKA PRATAMA
+Kelas: X AKT 2
+---
+Nama : SARAH HELAWATI
+Kelas: X AKT 2
+---
+Nama : SHAFIRA BAHIYA DANISH
+Kelas: X AKT 2
+---
+Nama : Sri Wardiati Rukmana
+Kelas: X AKT 2
+---
+Nama : SUCI TRI MULYANI
+Kelas: X AKT 2
+---
+Nama : SYARIFAH ALAYYA DAFINA ASRI ALQADRIE
+Kelas: X AKT 2
+---
+Nama : TENGKU DARA ALZHRA
+Kelas: X AKT 2
+---
+Nama : THORIQ URUMQI PASHA
+Kelas: X AKT 2
+---
+Nama : VYANKA QANIA RAYTAMA PUTRI
+Kelas: X AKT 2
+---
+Nama : YASITA DAMAYANTI
+Kelas: X AKT 2
+---
+Nama : AIDIL KHAIRANI
+Kelas: X AKT 3
+---
+Nama : ALBERT WILLARD
+Kelas: X AKT 3
+---
+Nama : AMELIA ULFA
+Kelas: X AKT 3
+---
+Nama : ANGEL
+Kelas: X AKT 3
+---
+Nama : ARDA FEBIANO NELSON
+Kelas: X AKT 3
+---
+Nama : CARLVINNA VALENTINA
+Kelas: X AKT 3
+---
+Nama : Chelvin Leovico
+Kelas: X AKT 3
+---
+Nama : DELLA ADINDA
+Kelas: X AKT 3
+---
+Nama : Ester
+Kelas: X AKT 3
+---
+Nama : Eva Idariani
+Kelas: X AKT 3
+---
+Nama : Febbryansyah Mauladan
+Kelas: X AKT 3
+---
+Nama : GABRIELA SEDATIARA
+Kelas: X AKT 3
+---
+Nama : JELIKA
+Kelas: X AKT 3
+---
+Nama : Kaira Anisa Fitri
+Kelas: X AKT 3
+---
+Nama : Lila Amelia
+Kelas: X AKT 3
+---
+Nama : Lulu Rahmiani
+Kelas: X AKT 3
+---
+Nama : MIFTAHUN NISYAH
+Kelas: X AKT 3
+---
+Nama : MUSLIMIN
+Kelas: X AKT 3
+---
+Nama : Nabila Febriani
+Kelas: X AKT 3
+---
+Nama : NAYLA MAULIDA AZZAHRA
+Kelas: X AKT 3
+---
+Nama : OLYPIAN HAKIM
+Kelas: X AKT 3
+---
+Nama : OWEN PRATAMA
+Kelas: X AKT 3
+---
+Nama : PUTRI ANJANI WINDIKA
+Kelas: X AKT 3
+---
+Nama : Rendy Permana
+Kelas: X AKT 3
+---
+Nama : Rere Andrian
+Kelas: X AKT 3
+---
+Nama : RINY TRI RAHAYU
+Kelas: X AKT 3
+---
+Nama : Salsabila
+Kelas: X AKT 3
+---
+Nama : Sherly Putri Nur Meysha
+Kelas: X AKT 3
+---
+Nama : Shevira Yuvi Syawalani
+Kelas: X AKT 3
+---
+Nama : SITI ADIJAH
+Kelas: X AKT 3
+---
+Nama : SYAZWANI FILZAH
+Kelas: X AKT 3
+---
+Nama : TESHA NABILA
+Kelas: X AKT 3
+---
+Nama : UMI ROHIMATUL ASKIA
+Kelas: X AKT 3
+---
+Nama : Varief Firdan
+Kelas: X AKT 3
+---
+Nama : WULAN AYUNISYA KHUMAIRA
+Kelas: X AKT 3
+---
+Nama : YUANITA WAHIDATURROHMA
+Kelas: X AKT 3
+---
+Nama : Adilla
+Kelas: X AKT 4
+---
+Nama : ADINDA PUTRI ANDINI
+Kelas: X AKT 4
+---
+Nama : Agha Abbasy
+Kelas: X AKT 4
+---
+Nama : Ahun Dana Kusuma
+Kelas: X AKT 4
+---
+Nama : Anggun Ismaniar
+Kelas: X AKT 4
+---
+Nama : ANNISA SYAFARANI
+Kelas: X AKT 4
+---
+Nama : BENAYA KRISTIAN
+Kelas: X AKT 4
+---
+Nama : Carisa Firmanda
+Kelas: X AKT 4
+---
+Nama : CAROL LITICIA
+Kelas: X AKT 4
+---
+Nama : DESRA ALFAHREZA PUTRA TRIADI
+Kelas: X AKT 4
+---
+Nama : Dinda Dwi Handayani
+Kelas: X AKT 4
+---
+Nama : Fitriyan Nur Rahmadani
+Kelas: X AKT 4
+---
+Nama : Hafizah
+Kelas: X AKT 4
+---
+Nama : IBNU ATOILLAH
+Kelas: X AKT 4
+---
+Nama : KHANSA NIA ARDHANI
+Kelas: X AKT 4
+---
+Nama : M. RIDHO SYAPUTRA
+Kelas: X AKT 4
+---
+Nama : MARVEL AGUSTIAWAN
+Kelas: X AKT 4
+---
+Nama : MELIANA
+Kelas: X AKT 4
+---
+Nama : Michael Janting
+Kelas: X AKT 4
+---
+Nama : Muhammad Java Rafif Dechivo
+Kelas: X AKT 4
+---
+Nama : NALITA MESYA NAZARIA
+Kelas: X AKT 4
+---
+Nama : NAYLA NAFIZA
+Kelas: X AKT 4
+---
+Nama : NISRINA AULIA
+Kelas: X AKT 4
+---
+Nama : NUR ASBANIAH
+Kelas: X AKT 4
+---
+Nama : Putri Izatunnisa
+Kelas: X AKT 4
+---
+Nama : Rahmalidza Rizqi Utami
+Kelas: X AKT 4
+---
+Nama : SHIFA MUJAHIDAH
+Kelas: X AKT 4
+---
+Nama : Sintia Oktapia
+Kelas: X AKT 4
+---
+Nama : SOLIHIN
+Kelas: X AKT 4
+---
+Nama : SUCI NUR RAMADHANI
+Kelas: X AKT 4
+---
+Nama : SYLVIA ANGELINA
+Kelas: X AKT 4
+---
+Nama : Tiara Anissa
+Kelas: X AKT 4
+---
+Nama : VERLENT RIYANI
+Kelas: X AKT 4
+---
+Nama : WAHYUDI
+Kelas: X AKT 4
+---
+Nama : YOCELIN AURELIA
+Kelas: X AKT 4
+---
+Nama : ZIVARA KHAILATUL JANNAH
+Kelas: X AKT 4
+---
+Nama : ADAM RISQI MAULANA
+Kelas: X BID
+---
+Nama : ADHIB PUTRA
+Kelas: X BID
+---
+Nama : Akbar Ramadhan Pratama
+Kelas: X BID
+---
+Nama : ANISA VILUNA ADHA
+Kelas: X BID
+---
+Nama : ARYA RAMADHANI
+Kelas: X BID
+---
+Nama : ARYO RAMADHANI
+Kelas: X BID
+---
+Nama : AULIA SHINTYA MECHA
+Kelas: X BID
+---
+Nama : AURAH DHELIAH
+Kelas: X BID
+---
+Nama : Benedictus Nober Christian
+Kelas: X BID
+---
+Nama : Chang Choi Fong
+Kelas: X BID
+---
+Nama : DIMAS ABY FEBRIANSYAH
+Kelas: X BID
+---
+Nama : FITRIA ARIFIN
+Kelas: X BID
+---
+Nama : HOLY PRATAMA
+Kelas: X BID
+---
+Nama : KEVIN
+Kelas: X BID
+---
+Nama : KHASYIFFAH OLIVIA NAJWA IZZATUNISA
+Kelas: X BID
+---
+Nama : KHOLIK SYAHRUL RAMADAN
+Kelas: X BID
+---
+Nama : Meiza
+Kelas: X BID
+---
+Nama : Muhamad Fajry
+Kelas: X BID
+---
+Nama : MUHAMMAD DAFFA
+Kelas: X BID
+---
+Nama : MUHAMMAD FAHRI
+Kelas: X BID
+---
+Nama : MUHAMMAD RIZAL RAY NORIZ
+Kelas: X BID
+---
+Nama : Muhammad Ruli Pratama
+Kelas: X BID
+---
+Nama : NABIL RAMADAN
+Kelas: X BID
+---
+Nama : Nanda Chazirah
+Kelas: X BID
+---
+Nama : Nur Laura Maulida
+Kelas: X BID
+---
+Nama : PRICILLA JANUARIANTIKA
+Kelas: X BID
+---
+Nama : REVA PUTRI SUNDAYU
+Kelas: X BID
+---
+Nama : Ridho Rizki Akbar
+Kelas: X BID
+---
+Nama : RIMA
+Kelas: X BID
+---
+Nama : Riska Lailatul Jamil
+Kelas: X BID
+---
+Nama : SALOMON BALLAROY
+Kelas: X BID
+---
+Nama : SOPI SALSABILLAH
+Kelas: X BID
+---
+Nama : STEVENT JONATHAN
+Kelas: X BID
+---
+Nama : URAY RAFA CALLYSTA
+Kelas: X BID
+---
+Nama : WILDAN TIRTA DWI NUGROHO
+Kelas: X BID
+---
+Nama : ALEXANDER FEBRIANTO
+Kelas: X BRT
+---
+Nama : ALIF IRVANDI
+Kelas: X BRT
+---
+Nama : ALIF PABLIANSYAH
+Kelas: X BRT
+---
+Nama : Alvin Gouw
+Kelas: X BRT
+---
+Nama : AMELYA HASANAH
+Kelas: X BRT
+---
+Nama : DEWI RANJANI
+Kelas: X BRT
+---
+Nama : DHEA PUTRI
+Kelas: X BRT
+---
+Nama : Excellency Javino Arpiansyah
+Kelas: X BRT
+---
+Nama : Fenny
+Kelas: X BRT
+---
+Nama : FRANSISKuS MARSEL
+Kelas: X BRT
+---
+Nama : GILANG KURNIA RAMADHAN
+Kelas: X BRT
+---
+Nama : Hafidz Fahrezi
+Kelas: X BRT
+---
+Nama : ISMATUL KARIMAH
+Kelas: X BRT
+---
+Nama : KHAIYLATUL MUNAUWERAH
+Kelas: X BRT
+---
+Nama : KORENTUS
+Kelas: X BRT
+---
+Nama : LASMI
+Kelas: X BRT
+---
+Nama : Meisya Febiana
+Kelas: X BRT
+---
+Nama : MUHAMMAD DWI ZIKRA
+Kelas: X BRT
+---
+Nama : NAYA AURURA NASHITA
+Kelas: X BRT
+---
+Nama : NENNY WULANDARI
+Kelas: X BRT
+---
+Nama : RAHMADANIA
+Kelas: X BRT
+---
+Nama : RISMA
+Kelas: X BRT
+---
+Nama : Rizky Afrillia
+Kelas: X BRT
+---
+Nama : Sakila Ramadhanti
+Kelas: X BRT
+---
+Nama : SALSABILA
+Kelas: X BRT
+---
+Nama : SALSABILLAH NURUN ALLANURIN
+Kelas: X BRT
+---
+Nama : SULAIHA
+Kelas: X BRT
+---
+Nama : SYAHROINI
+Kelas: X BRT
+---
+Nama : SYAWALANI PUTRI
+Kelas: X BRT
+---
+Nama : TISYA GEMI AULIA
+Kelas: X BRT
+---
+Nama : Varren
+Kelas: X BRT
+---
+Nama : Wenger
+Kelas: X BRT
+---
+Nama : ZASKIA ZIFALIA
+Kelas: X BRT
+---
+Nama : ZULKARNAEN
+Kelas: X BRT
+---
+Nama : AKSAY MUZAKKI
+Kelas: X HTL 1
+---
+Nama : ALDI RAMADHAN
+Kelas: X HTL 1
+---
+Nama : ANIEZ TIANY
+Kelas: X HTL 1
+---
+Nama : Antysa Bunga Jannatul Hikmah
+Kelas: X HTL 1
+---
+Nama : Ariel Apriansyah
+Kelas: X HTL 1
+---
+Nama : ATIKAH, S
+Kelas: X HTL 1
+---
+Nama : Dela
+Kelas: X HTL 1
+---
+Nama : DELISHA ANDIYANA
+Kelas: X HTL 1
+---
+Nama : EGY SYAHPUTRA
+Kelas: X HTL 1
+---
+Nama : Eka Kaya
+Kelas: X HTL 1
+---
+Nama : FAREL APRIANSYAH
+Kelas: X HTL 1
+---
+Nama : Firene Aprilia Maryani
+Kelas: X HTL 1
+---
+Nama : FREDY FREDERIKO
+Kelas: X HTL 1
+---
+Nama : Hilmi Muammar Yasir
+Kelas: X HTL 1
+---
+Nama : INDAH PUTRIANTIWY
+Kelas: X HTL 1
+---
+Nama : KARIZMA AJENG LATARISSA
+Kelas: X HTL 1
+---
+Nama : Kasih
+Kelas: X HTL 1
+---
+Nama : KHANSA ZAKIYYAH
+Kelas: X HTL 1
+---
+Nama : MAULITHA QYLA FEBRIANTO
+Kelas: X HTL 1
+---
+Nama : MUHAMMAD HASBI FIQRI
+Kelas: X HTL 1
+---
+Nama : Nazwa Azhara Safitri
+Kelas: X HTL 1
+---
+Nama : NURUL EFRA AULIA
+Kelas: X HTL 1
+---
+Nama : Pajar Putra Pamungkas
+Kelas: X HTL 1
+---
+Nama : PUTRI ANITA JULIAWATI
+Kelas: X HTL 1
+---
+Nama : Rahma Nita
+Kelas: X HTL 1
+---
+Nama : Rama Saputra
+Kelas: X HTL 1
+---
+Nama : REFAN
+Kelas: X HTL 1
+---
+Nama : RIFA AULIA NISSA
+Kelas: X HTL 1
+---
+Nama : SANDIKA TURANGGA
+Kelas: X HTL 1
+---
+Nama : SHINTA LARASATI WULANDARI
+Kelas: X HTL 1
+---
+Nama : SITI SAFITRI
+Kelas: X HTL 1
+---
+Nama : Suraya
+Kelas: X HTL 1
+---
+Nama : VOLIN
+Kelas: X HTL 1
+---
+Nama : Ahmad latiful Khobir
+Kelas: X HTL 2
+---
+Nama : Alan Afiansah
+Kelas: X HTL 2
+---
+Nama : AYUNDA
+Kelas: X HTL 2
+---
+Nama : AZREVI ALIZIA
+Kelas: X HTL 2
+---
+Nama : BIANCA FELISHA NOVITASARI
+Kelas: X HTL 2
+---
+Nama : DEKA AGUS GUNAWAN
+Kelas: X HTL 2
+---
+Nama : Destia Farista
+Kelas: X HTL 2
+---
+Nama : DIANA SAPUTRI HESTI
+Kelas: X HTL 2
+---
+Nama : FAHMI FUADI
+Kelas: X HTL 2
+---
+Nama : Fauzan Ismail
+Kelas: X HTL 2
+---
+Nama : FEBRIYANSAH
+Kelas: X HTL 2
+---
+Nama : Fitry Ramadani
+Kelas: X HTL 2
+---
+Nama : GINA RAHMA PUTRI
+Kelas: X HTL 2
+---
+Nama : KEISYAH BRILIANTI
+Kelas: X HTL 2
+---
+Nama : Ketrina
+Kelas: X HTL 2
+---
+Nama : KHOLIFATUL RIFA BELA
+Kelas: X HTL 2
+---
+Nama : KIRANA RAMADANI
+Kelas: X HTL 2
+---
+Nama : MOHAMMAD FATHIR
+Kelas: X HTL 2
+---
+Nama : Muhammad Ridho
+Kelas: X HTL 2
+---
+Nama : NABILA SARI RAFIFAH
+Kelas: X HTL 2
+---
+Nama : NADINE RESTYANING PUTRI
+Kelas: X HTL 2
+---
+Nama : NAURA SHAFIQAH. P
+Kelas: X HTL 2
+---
+Nama : NAZA RAHMA HIDAYAH
+Kelas: X HTL 2
+---
+Nama : NOVI SAFITRI
+Kelas: X HTL 2
+---
+Nama : putri amelia
+Kelas: X HTL 2
+---
+Nama : Raivan Dwi Jaksana
+Kelas: X HTL 2
+---
+Nama : RASYA ADELIA YOLANDA
+Kelas: X HTL 2
+---
+Nama : REZKY PRATAMA
+Kelas: X HTL 2
+---
+Nama : Ridwan Aldiyansyah Saputra
+Kelas: X HTL 2
+---
+Nama : SALWA FATMAWATI
+Kelas: X HTL 2
+---
+Nama : Selvi Triana
+Kelas: X HTL 2
+---
+Nama : Sentia
+Kelas: X HTL 2
+---
+Nama : SRI WAHYUNI INDAH WATI
+Kelas: X HTL 2
+---
+Nama : WINDA DWI ARIANTI
+Kelas: X HTL 2
+---
+Nama : ADAM MAULANA
+Kelas: X LPB
+---
+Nama : AHMAD RAMESSI
+Kelas: X LPB
+---
+Nama : Ahmad Tifatul Fahri
+Kelas: X LPB
+---
+Nama : AILA ARIANTI
+Kelas: X LPB
+---
+Nama : Alesa Leony Lim
+Kelas: X LPB
+---
+Nama : Ananda Firdaus
+Kelas: X LPB
+---
+Nama : AZZAHRA ZANUBBA CHAFSOH
+Kelas: X LPB
+---
+Nama : BIMA ANUGRAH WAHYUDI
+Kelas: X LPB
+---
+Nama : Bunga Amelia
+Kelas: X LPB
+---
+Nama : CELVIN FEBRIYAN WINATA
+Kelas: X LPB
+---
+Nama : Cinta Difitri
+Kelas: X LPB
+---
+Nama : DEWI KALVERA
+Kelas: X LPB
+---
+Nama : FATIH RAFIF RIZQULLAH
+Kelas: X LPB
+---
+Nama : JUNIVER AFREDO
+Kelas: X LPB
+---
+Nama : LENI PITJRIANI
+Kelas: X LPB
+---
+Nama : MARPEL
+Kelas: X LPB
+---
+Nama : Masya Putri Nabila
+Kelas: X LPB
+---
+Nama : MUHAMMAD FITRA PRATAMA
+Kelas: X LPB
+---
+Nama : MUHAMMAD IQHBAL MAULANA
+Kelas: X LPB
+---
+Nama : NABILA AURELIA ASSYIFA
+Kelas: X LPB
+---
+Nama : Noveila Kristin Sabin
+Kelas: X LPB
+---
+Nama : Nurul Riska Saparia
+Kelas: X LPB
+---
+Nama : Onyx Calista Amadea
+Kelas: X LPB
+---
+Nama : PENI YATI
+Kelas: X LPB
+---
+Nama : PINOT LOKA JAYA
+Kelas: X LPB
+---
+Nama : QUINSHA MAHARANI
+Kelas: X LPB
+---
+Nama : Raisya Putri Priscylla
+Kelas: X LPB
+---
+Nama : REGITA HANIE LAYRENCIA
+Kelas: X LPB
+---
+Nama : REIHAN AL KHUSAINI
+Kelas: X LPB
+---
+Nama : RYO TRI WAHYUDI
+Kelas: X LPB
+---
+Nama : Shandy Adittia Pauzan
+Kelas: X LPB
+---
+Nama : SISKA ARISKA
+Kelas: X LPB
+---
+Nama : Yuda Kurniawan
+Kelas: X LPB
+---
+Nama : Afifa Syahira
+Kelas: X MLG
+---
+Nama : Aldy
+Kelas: X MLG
+---
+Nama : ALFIGO RIZKY JONATHAN
+Kelas: X MLG
+---
+Nama : BAGUS ANOM TRIRAFA
+Kelas: X MLG
+---
+Nama : Bryan Arron Mok
+Kelas: X MLG
+---
+Nama : CHELSEA VANIA SITEPU
+Kelas: X MLG
+---
+Nama : Cika Juliana
+Kelas: X MLG
+---
+Nama : Dexter Oswald
+Kelas: X MLG
+---
+Nama : DHEA KEYSIA NOVA
+Kelas: X MLG
+---
+Nama : DIVA
+Kelas: X MLG
+---
+Nama : ENZQELA CYNDI
+Kelas: X MLG
+---
+Nama : FADIL NOVANSYAH
+Kelas: X MLG
+---
+Nama : GABRIEL MESSINA
+Kelas: X MLG
+---
+Nama : Indah Daranita
+Kelas: X MLG
+---
+Nama : IZZATUN NAFISYA APRILYANDARI
+Kelas: X MLG
+---
+Nama : JESIKA AYU RAHMADANI
+Kelas: X MLG
+---
+Nama : KARISMA NURATZHARA
+Kelas: X MLG
+---
+Nama : KEVIN
+Kelas: X MLG
+---
+Nama : Kirana
+Kelas: X MLG
+---
+Nama : KRISDAYANTI
+Kelas: X MLG
+---
+Nama : Meisya Tiara Shafira
+Kelas: X MLG
+---
+Nama : MELINDAH WATI
+Kelas: X MLG
+---
+Nama : MUHAMMAD ADITYA PUTRA
+Kelas: X MLG
+---
+Nama : MUHAMMAD AKBAR RAFSANJAYA
+Kelas: X MLG
+---
+Nama : MUHAMMAD ANUGRAH FAHMANSYAH
+Kelas: X MLG
+---
+Nama : MUHAMMAD RIZKI
+Kelas: X MLG
+---
+Nama : Nabila Anissa Putri
+Kelas: X MLG
+---
+Nama : PUTRA RAMADHAN
+Kelas: X MLG
+---
+Nama : PUTRI AMELIA
+Kelas: X MLG
+---
+Nama : RADITA KINANTI
+Kelas: X MLG
+---
+Nama : Rana Reisha Putri
+Kelas: X MLG
+---
+Nama : Ridho Rizky Maulana
+Kelas: X MLG
+---
+Nama : SAFA OKTAVIA
+Kelas: X MLG
+---
+Nama : Sidah
+Kelas: X MLG
+---
+Nama : ZAM ZAM RAMADHAN
+Kelas: X MLG
+---
+Nama : AISYAH PUTRI NABILA
+Kelas: X MPK
+---
+Nama : Annisah
+Kelas: X MPK
+---
+Nama : Bayyinah Nur Raysma
+Kelas: X MPK
+---
+Nama : CHEYSAH PUTRI
+Kelas: X MPK
+---
+Nama : Dhea Syahbania
+Kelas: X MPK
+---
+Nama : Dia Saskiah
+Kelas: X MPK
+---
+Nama : DINI IRNAWATI
+Kelas: X MPK
+---
+Nama : DIVI LIQIUSA PRATIWI
+Kelas: X MPK
+---
+Nama : Eka Ulitia
+Kelas: X MPK
+---
+Nama : Fani Indriyani Darmawanti
+Kelas: X MPK
+---
+Nama : Ghalia Safia Misha
+Kelas: X MPK
+---
+Nama : Hania Syaqira
+Kelas: X MPK
+---
+Nama : Helen
+Kelas: X MPK
+---
+Nama : Hervani Cantika Pebrianti
+Kelas: X MPK
+---
+Nama : Ibnu Azriellico
+Kelas: X MPK
+---
+Nama : KASIH AURA
+Kelas: X MPK
+---
+Nama : LUTFIA NABILA IFA
+Kelas: X MPK
+---
+Nama : Mita Hulhuda
+Kelas: X MPK
+---
+Nama : NABILA PUTRI AMALIA
+Kelas: X MPK
+---
+Nama : NOVA ELVIANA
+Kelas: X MPK
+---
+Nama : Novita Kristianti
+Kelas: X MPK
+---
+Nama : Owen Alexander Tan
+Kelas: X MPK
+---
+Nama : PUTRI INDRIYANA
+Kelas: X MPK
+---
+Nama : PUTRI SYIFA ARKANA DILA
+Kelas: X MPK
+---
+Nama : RAHAYU
+Kelas: X MPK
+---
+Nama : RAIHAN IRFANI
+Kelas: X MPK
+---
+Nama : RHEYSA DONIA PUTRI
+Kelas: X MPK
+---
+Nama : RIZKI AL-MUHARROM
+Kelas: X MPK
+---
+Nama : Sally Cahaya Devi
+Kelas: X MPK
+---
+Nama : Sindi Oktavianti
+Kelas: X MPK
+---
+Nama : SYAFIRA NURRAHMADANI
+Kelas: X MPK
+---
+Nama : Syarif Muhammad Abdul Hafiz
+Kelas: X MPK
+---
+Nama : TORA AR-RAY IBNE HARISH
+Kelas: X MPK
+---
+Nama : WANDA NURMAUDILA
+Kelas: X MPK
+---
+Nama : YOGA WIBIKSANA
+Kelas: X MPK
+---
+Nama : YOSUA
+Kelas: X MPK
+---
+Nama : ABDUL HAFIT
+Kelas: X ULW
+---
+Nama : ALIKA MUTIARA PUTRI MURAKIFAA
+Kelas: X ULW
+---
+Nama : Alma Nur Annisa
+Kelas: X ULW
+---
+Nama : ARTIKA SAPUTRI AL ZAHRA
+Kelas: X ULW
+---
+Nama : AVRANDHA AZKA MAULANA
+Kelas: X ULW
+---
+Nama : AZZAHRA NUR ANISA
+Kelas: X ULW
+---
+Nama : Chang Ju Si
+Kelas: X ULW
+---
+Nama : Cindy Oktavia
+Kelas: X ULW
+---
+Nama : Crystal Vallencia
+Kelas: X ULW
+---
+Nama : DIMAS RAZKY UMAY ZAKKY
+Kelas: X ULW
+---
+Nama : Dio Januaresta
+Kelas: X ULW
+---
+Nama : FADELAH AULIA NADHA
+Kelas: X ULW
+---
+Nama : FARID HIBATULLAH
+Kelas: X ULW
+---
+Nama : FATIMA TUZZAHRA
+Kelas: X ULW
+---
+Nama : GIRAY GUNAWAN
+Kelas: X ULW
+---
+Nama : Hanny Restia
+Kelas: X ULW
+---
+Nama : JUNIA ROBETS
+Kelas: X ULW
+---
+Nama : MAWARDI
+Kelas: X ULW
+---
+Nama : MELANI ZAHRAH OLIVIA
+Kelas: X ULW
+---
+Nama : MUHAMMAD ALFU YASSIR
+Kelas: X ULW
+---
+Nama : MUHAMMAD ARIEF SURYA PRATAMA
+Kelas: X ULW
+---
+Nama : MUHAMMAD ARIFIN ILHAM
+Kelas: X ULW
+---
+Nama : MUHAMMAD KHAIRUL AZZAM
+Kelas: X ULW
+---
+Nama : Nabila Irfat
+Kelas: X ULW
+---
+Nama : Nadia Oliviani
+Kelas: X ULW
+---
+Nama : NAILA ELSA AULIA
+Kelas: X ULW
+---
+Nama : Puja Dwi Yanti Ningsih
+Kelas: X ULW
+---
+Nama : RIZKY
+Kelas: X ULW
+---
+Nama : SEISYA NURWILAN RAMADANI
+Kelas: X ULW
+---
+Nama : SHENA SETIAWAN
+Kelas: X ULW
+---
+Nama : SUTHA VANGA PANDEVA
+Kelas: X ULW
+---
+Nama : TASYA PUTRI RAHAYU
+Kelas: X ULW
+---
+Nama : UTI FADHIL PRATAMA
+Kelas: X ULW
+---
+Nama : VALLENSIA MARANATA
+Kelas: X ULW
+---
+Nama : YUNITA SARI
+Kelas: X ULW
+---
+Nama : Ade Raihan Maulana
+Kelas: XI AKT 1
+---
+Nama : AIRA MAULIDIYA
+Kelas: XI AKT 1
+---
+Nama : AISYAH NAZAHAH IKHSANI
+Kelas: XI AKT 1
+---
+Nama : Alif Maulana Saputra
+Kelas: XI AKT 1
+---
+Nama : ANANDA AYUDIA PRATIWI
+Kelas: XI AKT 1
+---
+Nama : ANISA OKTAVIANI
+Kelas: XI AKT 1
+---
+Nama : APRILIA WULANDARI
+Kelas: XI AKT 1
+---
+Nama : Aulia Joenita
+Kelas: XI AKT 1
+---
+Nama : Cahya Az-Zahra
+Kelas: XI AKT 1
+---
+Nama : Cinta Valencia
+Kelas: XI AKT 1
+---
+Nama : Dinda Nazwa Syafitri
+Kelas: XI AKT 1
+---
+Nama : eka
+Kelas: XI AKT 1
+---
+Nama : IVANTI FEBRIANA
+Kelas: XI AKT 1
+---
+Nama : Kevin Herlino
+Kelas: XI AKT 1
+---
+Nama : Khairani Nurulnisha
+Kelas: XI AKT 1
+---
+Nama : MUHAMMAD FAREL MAULANA
+Kelas: XI AKT 1
+---
+Nama : Muhammad Rafa Indra Faisal
+Kelas: XI AKT 1
+---
+Nama : Muhammad Sammy Alzirra
+Kelas: XI AKT 1
+---
+Nama : MYESHIA JANETA MEHRUNNISA
+Kelas: XI AKT 1
+---
+Nama : NABIL PANGESTU
+Kelas: XI AKT 1
+---
+Nama : NAJMIYATUN
+Kelas: XI AKT 1
+---
+Nama : Nur Anggia
+Kelas: XI AKT 1
+---
+Nama : PUTRI MAHARANI
+Kelas: XI AKT 1
+---
+Nama : REBYANA WINDA
+Kelas: XI AKT 1
+---
+Nama : REYHAN TRI NUGROHO
+Kelas: XI AKT 1
+---
+Nama : Riani Widyanata
+Kelas: XI AKT 1
+---
+Nama : RIO
+Kelas: XI AKT 1
+---
+Nama : safira
+Kelas: XI AKT 1
+---
+Nama : SHEZA FATHIYA SEFREINA
+Kelas: XI AKT 1
+---
+Nama : SUCI MUSTIKA
+Kelas: XI AKT 1
+---
+Nama : Syafa Alifia
+Kelas: XI AKT 1
+---
+Nama : TRI APRIANO
+Kelas: XI AKT 1
+---
+Nama : Vanessa
+Kelas: XI AKT 1
+---
+Nama : YULFI SETIA RINI
+Kelas: XI AKT 1
+---
+Nama : Agita Putri
+Kelas: XI AKT 2
+---
+Nama : AISYAH DEWI UTAMI
+Kelas: XI AKT 2
+---
+Nama : AKIRA DWI FEDIAN
+Kelas: XI AKT 2
+---
+Nama : Aldo Herianto
+Kelas: XI AKT 2
+---
+Nama : ARJUN JELYANTO
+Kelas: XI AKT 2
+---
+Nama : Aura Ma'rifah
+Kelas: XI AKT 2
+---
+Nama : AURA PUTRI ALISYANTIKA
+Kelas: XI AKT 2
+---
+Nama : Callysta Olivia
+Kelas: XI AKT 2
+---
+Nama : CLARA AULIA
+Kelas: XI AKT 2
+---
+Nama : DAVIN GIVANNO
+Kelas: XI AKT 2
+---
+Nama : ENDAH PAWESTRI
+Kelas: XI AKT 2
+---
+Nama : FIDIA SAFITRI
+Kelas: XI AKT 2
+---
+Nama : GIFTA OKSAFASTINA
+Kelas: XI AKT 2
+---
+Nama : Jessika
+Kelas: XI AKT 2
+---
+Nama : KHANSA KAMILA KHAIRUNNISA
+Kelas: XI AKT 2
+---
+Nama : Muhammad Fikri Akbar Maxbloer
+Kelas: XI AKT 2
+---
+Nama : Muhammad Syamsal Kamal Zamzama
+Kelas: XI AKT 2
+---
+Nama : NAFIESA FIDYA RIZKI AZHARI
+Kelas: XI AKT 2
+---
+Nama : NATALY GHRESYA
+Kelas: XI AKT 2
+---
+Nama : NUR KHATIZAH RAHMADHANI
+Kelas: XI AKT 2
+---
+Nama : Rahmawati
+Kelas: XI AKT 2
+---
+Nama : RENATA MAULITA
+Kelas: XI AKT 2
+---
+Nama : RISKI SAPUTRA
+Kelas: XI AKT 2
+---
+Nama : RISMAWATI
+Kelas: XI AKT 2
+---
+Nama : Saskia Septriani
+Kelas: XI AKT 2
+---
+Nama : SRI MAULANI PUTRI
+Kelas: XI AKT 2
+---
+Nama : SUCI RAMADHANI
+Kelas: XI AKT 2
+---
+Nama : SYIFA MAULIDYA
+Kelas: XI AKT 2
+---
+Nama : URAY BARI PATURRAHMAN
+Kelas: XI AKT 2
+---
+Nama : VIVIAN FEI
+Kelas: XI AKT 2
+---
+Nama : ZAKY SUBEKTI
+Kelas: XI AKT 2
+---
+Nama : ZAMATUN AINI
+Kelas: XI AKT 2
+---
+Nama : Ade Syifa Maulidia
+Kelas: XI AKT 3
+---
+Nama : Adila Fitri Seftiani
+Kelas: XI AKT 3
+---
+Nama : Aina Sapania
+Kelas: XI AKT 3
+---
+Nama : Aisyah Dwi Arianti
+Kelas: XI AKT 3
+---
+Nama : Alejandro Perrota
+Kelas: XI AKT 3
+---
+Nama : Atiqa Zahra Faiha
+Kelas: XI AKT 3
+---
+Nama : AZALIA AMANDA 
+Kelas: XI AKT 3
+---
+Nama : CHELSEA APRILA
+Kelas: XI AKT 3
+---
+Nama : Dani Riansyah
+Kelas: XI AKT 3
+---
+Nama : DIAS ANNASTHASYIA HERLIANTO PUTRI
+Kelas: XI AKT 3
+---
+Nama : DIVA RAMADAN
+Kelas: XI AKT 3
+---
+Nama : Eva Surya Nengsih
+Kelas: XI AKT 3
+---
+Nama : FITRI ADISTIA SUHENDRI
+Kelas: XI AKT 3
+---
+Nama : HOLYLA
+Kelas: XI AKT 3
+---
+Nama : INTAN ANDINI
+Kelas: XI AKT 3
+---
+Nama : Melani
+Kelas: XI AKT 3
+---
+Nama : Muhammad Fahri Pahrullah
+Kelas: XI AKT 3
+---
+Nama : MUHAMMAD IQBAL
+Kelas: XI AKT 3
+---
+Nama : Muhammad Rizky Afandi
+Kelas: XI AKT 3
+---
+Nama : Naisya Jelita Pertiwi
+Kelas: XI AKT 3
+---
+Nama : Nova Nur Cahyani
+Kelas: XI AKT 3
+---
+Nama : PRAMITA
+Kelas: XI AKT 3
+---
+Nama : RAJWAA ZALFA FADHILAH
+Kelas: XI AKT 3
+---
+Nama : Reinhardt Mulya Faras
+Kelas: XI AKT 3
+---
+Nama : Ria Febriyanti
+Kelas: XI AKT 3
+---
+Nama : RIDHO RAMDANI
+Kelas: XI AKT 3
+---
+Nama : SAFHIRA PUTRI RAMADHANI
+Kelas: XI AKT 3
+---
+Nama : SANDY
+Kelas: XI AKT 3
+---
+Nama : SEPTIANI SARI SWASTIKA
+Kelas: XI AKT 3
+---
+Nama : Siti Nuratikoh
+Kelas: XI AKT 3
+---
+Nama : SUCI
+Kelas: XI AKT 3
+---
+Nama : Susanti
+Kelas: XI AKT 3
+---
+Nama : YAYA DYTAMI
+Kelas: XI AKT 3
+---
+Nama : YUDHISTIRA
+Kelas: XI AKT 3
+---
+Nama : ZAHRATUSYITA PUTRI CHAIRULINA
+Kelas: XI AKT 3
+---
+Nama : AHMAD PRATAMA
+Kelas: XI BID
+---
+Nama : ANGEL LIKA AURELLIA
+Kelas: XI BID
+---
+Nama : ARDY ALFARISYI
+Kelas: XI BID
+---
+Nama : Arifa Nabila
+Kelas: XI BID
+---
+Nama : Dani Suliawan
+Kelas: XI BID
+---
+Nama : DIKA RAUSANFIKRI
+Kelas: XI BID
+---
+Nama : ERSANTA TRI MICHOLA ONRAMUS
+Kelas: XI BID
+---
+Nama : FANYZA RIZKYANA
+Kelas: XI BID
+---
+Nama : Farhan
+Kelas: XI BID
+---
+Nama : Fitri
+Kelas: XI BID
+---
+Nama : Ghina Raisya
+Kelas: XI BID
+---
+Nama : HAIKAL KAMIL
+Kelas: XI BID
+---
+Nama : IBRAHIM AZIZI
+Kelas: XI BID
+---
+Nama : IMAM BUKHORI
+Kelas: XI BID
+---
+Nama : Maulidya Azzahra
+Kelas: XI BID
+---
+Nama : Mohamad Rega Hermawan
+Kelas: XI BID
+---
+Nama : Mohamad Regi Setiawan
+Kelas: XI BID
+---
+Nama : MONALISA
+Kelas: XI BID
+---
+Nama : Muhammad Fadhil Nurhansyah
+Kelas: XI BID
+---
+Nama : MUHAMMAD FAHRI MUZAKI
+Kelas: XI BID
+---
+Nama : MUHAMMAD RIZKY ADITYA
+Kelas: XI BID
+---
+Nama : NENDI VEBRIANTY
+Kelas: XI BID
+---
+Nama : NUR ILHAM
+Kelas: XI BID
+---
+Nama : PUTRI AULIA
+Kelas: XI BID
+---
+Nama : RADITYA RIZKI PRATAMA MEIDIAN DHINY
+Kelas: XI BID
+---
+Nama : Rahma Dania Fitri
+Kelas: XI BID
+---
+Nama : RATVELINO FIRDARYAN
+Kelas: XI BID
+---
+Nama : Resti Juli Oktavia
+Kelas: XI BID
+---
+Nama : Syaiful Ramadani
+Kelas: XI BID
+---
+Nama : VALENTINA AULIA KAROLIN
+Kelas: XI BID
+---
+Nama : VITA LESTARI
+Kelas: XI BID
+---
+Nama : WIDAD WULANDARI
+Kelas: XI BID
+---
+Nama : WIDYA LESTARI
+Kelas: XI BID
+---
+Nama : ZEORA RAHMADHANI PUTRI WIRAWAN
+Kelas: XI BID
+---
+Nama : ADI
+Kelas: XI BRT
+---
+Nama : AISYAH RAHMADHANI
+Kelas: XI BRT
+---
+Nama : AKBAR SAPUTRA
+Kelas: XI BRT
+---
+Nama : Ameliya
+Kelas: XI BRT
+---
+Nama : ANDIKA RAHMAN
+Kelas: XI BRT
+---
+Nama : ANDREA PUSPA
+Kelas: XI BRT
+---
+Nama : CHELSEA SAINI
+Kelas: XI BRT
+---
+Nama : Dinda Chumairah
+Kelas: XI BRT
+---
+Nama : Dwi Rahmi Marsyahputri
+Kelas: XI BRT
+---
+Nama : FAHREZI BUDIMAN
+Kelas: XI BRT
+---
+Nama : FAKHRI BIF FADILAH
+Kelas: XI BRT
+---
+Nama : Fandi
+Kelas: XI BRT
+---
+Nama : FEBRIANITA CHAIRUNNISA
+Kelas: XI BRT
+---
+Nama : GIBRIL FAHRIANDA
+Kelas: XI BRT
+---
+Nama : HERE MALDI RIOHAN
+Kelas: XI BRT
+---
+Nama : Ikhsan Dwi Putra
+Kelas: XI BRT
+---
+Nama : IRMA KHANSA FIANTI
+Kelas: XI BRT
+---
+Nama : Lailatul Fitrianingsih
+Kelas: XI BRT
+---
+Nama : MUHAMMAD ALIF QADHAFI
+Kelas: XI BRT
+---
+Nama : Muhammad Fairuz Jauhari
+Kelas: XI BRT
+---
+Nama : MUHAMMAD RHEGA RAYA IDUL FITRI
+Kelas: XI BRT
+---
+Nama : NADZRIL JULIAN
+Kelas: XI BRT
+---
+Nama : Noveliana
+Kelas: XI BRT
+---
+Nama : Novia Reski
+Kelas: XI BRT
+---
+Nama : Rizki Ramadhani
+Kelas: XI BRT
+---
+Nama : SHINDY MUTIARA CINTA SETIANI
+Kelas: XI BRT
+---
+Nama : SUCI RAMADANI
+Kelas: XI BRT
+---
+Nama : SY. ABDURRAHMAN AL KADRI
+Kelas: XI BRT
+---
+Nama : TIARA
+Kelas: XI BRT
+---
+Nama : VIRDHA TSIQAH ISLAMIATI
+Kelas: XI BRT
+---
+Nama : WULANDARI
+Kelas: XI BRT
+---
+Nama : Yuni Arum
+Kelas: XI BRT
+---
+Nama : ZAFIRA ISMI
+Kelas: XI BRT
+---
+Nama : ADE ISNAN MAULANA
+Kelas: XI HTL
+---
+Nama : Adriana
+Kelas: XI HTL
+---
+Nama : Aira Cahyani
+Kelas: XI HTL
+---
+Nama : AULIA AMANDARIE SUBIANTORO
+Kelas: XI HTL
+---
+Nama : CHIFA QHASRINA SHALSABILA
+Kelas: XI HTL
+---
+Nama : Fahri Al Bukhari
+Kelas: XI HTL
+---
+Nama : Fairuz Putra Pratama
+Kelas: XI HTL
+---
+Nama : FIRDAUS
+Kelas: XI HTL
+---
+Nama : FRISKA AZZURA
+Kelas: XI HTL
+---
+Nama : HANDY MULIADY WIJAYA
+Kelas: XI HTL
+---
+Nama : Karina Puspita Sari
+Kelas: XI HTL
+---
+Nama : KASIH
+Kelas: XI HTL
+---
+Nama : Keisha Pratiwi
+Kelas: XI HTL
+---
+Nama : LUTHFYANA NURIL SYAFRIANI
+Kelas: XI HTL
+---
+Nama : M. Muri Ali Sabana
+Kelas: XI HTL
+---
+Nama : MUHAMAD REZA SAPUTRA
+Kelas: XI HTL
+---
+Nama : MUHAMMAD REVI FEBRIAN
+Kelas: XI HTL
+---
+Nama : NADIA ATHIA GHINA
+Kelas: XI HTL
+---
+Nama : NAYLA DWI PUTRI
+Kelas: XI HTL
+---
+Nama : Olivia Azzachara
+Kelas: XI HTL
+---
+Nama : PUTRI AURA GHASYIYA
+Kelas: XI HTL
+---
+Nama : RAFA TRI NUGRAHA
+Kelas: XI HTL
+---
+Nama : Refangga Aryatama
+Kelas: XI HTL
+---
+Nama : Rifat Novalliansyah
+Kelas: XI HTL
+---
+Nama : RIFDA NAILA FIKRIYA
+Kelas: XI HTL
+---
+Nama : Riska Aprillia
+Kelas: XI HTL
+---
+Nama : Rizki Pratama
+Kelas: XI HTL
+---
+Nama : ROMEO SAPUTRA
+Kelas: XI HTL
+---
+Nama : ROMERO ALFATIH SAMUDERA
+Kelas: XI HTL
+---
+Nama : SARMILA
+Kelas: XI HTL
+---
+Nama : SEHROH
+Kelas: XI HTL
+---
+Nama : SITI KHOPSAH
+Kelas: XI HTL
+---
+Nama : Vogandra Dosenargo
+Kelas: XI HTL
+---
+Nama : AHMAD MUAZIR
+Kelas: XI LPB
+---
+Nama : AVILA MELDELYNE
+Kelas: XI LPB
+---
+Nama : BUSTANIL ARIFIN
+Kelas: XI LPB
+---
+Nama : DEA DESI RANITA
+Kelas: XI LPB
+---
+Nama : DESPA NATALINDA
+Kelas: XI LPB
+---
+Nama : DHINO WAHYU SAPUTRA
+Kelas: XI LPB
+---
+Nama : DIA DEWI RANITA
+Kelas: XI LPB
+---
+Nama : DIGA SALZABILA
+Kelas: XI LPB
+---
+Nama : ERNITA SARI
+Kelas: XI LPB
+---
+Nama : FAHRIZANSYAH
+Kelas: XI LPB
+---
+Nama : Faris Praja Ditama
+Kelas: XI LPB
+---
+Nama : FELISIA RASTI BINUA
+Kelas: XI LPB
+---
+Nama : GALANG AWALIANDRY
+Kelas: XI LPB
+---
+Nama : GRESYA NATHALIA
+Kelas: XI LPB
+---
+Nama : HARDIRA RAHMA SIFANTI
+Kelas: XI LPB
+---
+Nama : HISAH MELANI
+Kelas: XI LPB
+---
+Nama : Kirana Try Syafura
+Kelas: XI LPB
+---
+Nama : M  YUSRIL
+Kelas: XI LPB
+---
+Nama : M. Gusti Arsyad
+Kelas: XI LPB
+---
+Nama : MITTA DAMAYANTI
+Kelas: XI LPB
+---
+Nama : Muflihati Awalia
+Kelas: XI LPB
+---
+Nama : NADA
+Kelas: XI LPB
+---
+Nama : NANDA NUR AZIZA
+Kelas: XI LPB
+---
+Nama : PAULUS GOLDY ELVARO WARDANDY
+Kelas: XI LPB
+---
+Nama : RAFI'UL MUHSININ
+Kelas: XI LPB
+---
+Nama : RAMADANIA TRI YOSA
+Kelas: XI LPB
+---
+Nama : RIKI PRASETIO WIBOWO
+Kelas: XI LPB
+---
+Nama : Salwa Sabrina
+Kelas: XI LPB
+---
+Nama : Serina
+Kelas: XI LPB
+---
+Nama : SITI AISYAH
+Kelas: XI LPB
+---
+Nama : Syaffa
+Kelas: XI LPB
+---
+Nama : SYARIFAH LAILA RAHMADANI
+Kelas: XI LPB
+---
+Nama : Syifa Nur Adha
+Kelas: XI LPB
+---
+Nama : TISYA ANGGRAINI
+Kelas: XI LPB
+---
+Nama : Tri Mahendra
+Kelas: XI LPB
+---
+Nama : ABAY
+Kelas: XI MLG
+---
+Nama : ABYZAR ALBIFARI
+Kelas: XI MLG
+---
+Nama : AIDIL ILHAM
+Kelas: XI MLG
+---
+Nama : Anggun Novia Sari
+Kelas: XI MLG
+---
+Nama : Cyntia Widyasari
+Kelas: XI MLG
+---
+Nama : Dayang Salwa Andini
+Kelas: XI MLG
+---
+Nama : Fazar Ramadhan
+Kelas: XI MLG
+---
+Nama : Finda Aufaliana
+Kelas: XI MLG
+---
+Nama : Galih Pranata
+Kelas: XI MLG
+---
+Nama : Illa Fadira
+Kelas: XI MLG
+---
+Nama : LELINFIA REZKY
+Kelas: XI MLG
+---
+Nama : M. ALIF HISYAM ANNIZAR
+Kelas: XI MLG
+---
+Nama : Meguel Zilguin
+Kelas: XI MLG
+---
+Nama : Muhammad Rahlil
+Kelas: XI MLG
+---
+Nama : Putri Nadia
+Kelas: XI MLG
+---
+Nama : RAGIL JANOKO WICAKSONO
+Kelas: XI MLG
+---
+Nama : Rahma Nabiliani
+Kelas: XI MLG
+---
+Nama : RAHMA WIDYA SAFITRI
+Kelas: XI MLG
+---
+Nama : Ramzi Serhan bin nawawi
+Kelas: XI MLG
+---
+Nama : Resky Dwi Ramadan
+Kelas: XI MLG
+---
+Nama : SAPATRA
+Kelas: XI MLG
+---
+Nama : SAVIRA ZAHRA RAMADHANI
+Kelas: XI MLG
+---
+Nama : SETO WIJAYA SUMANDRA
+Kelas: XI MLG
+---
+Nama : Shahira Azwa
+Kelas: XI MLG
+---
+Nama : SRI AULIYA ANGGRAINI
+Kelas: XI MLG
+---
+Nama : SYAHIRA ARLA NADIFA
+Kelas: XI MLG
+---
+Nama : Tita Cahyaningtyas
+Kelas: XI MLG
+---
+Nama : Uray Muslimin
+Kelas: XI MLG
+---
+Nama : VINA FITRIANI
+Kelas: XI MLG
+---
+Nama : ZASKIA RAMADHANI
+Kelas: XI MLG
+---
+Nama : ZHAFIRA MEISYA
+Kelas: XI MLG
+---
+Nama : AFIFA ZHAFIRA
+Kelas: XI MPK
+---
+Nama : AFIKA NABILA
+Kelas: XI MPK
+---
+Nama : ALINI WIDIYANTI
+Kelas: XI MPK
+---
+Nama : ALMIRA SEPTI RAMADHANI
+Kelas: XI MPK
+---
+Nama : ARIEL DWI ANUGRAH
+Kelas: XI MPK
+---
+Nama : ATHILA HAIRUNISA
+Kelas: XI MPK
+---
+Nama : AULIA ZASKIYA
+Kelas: XI MPK
+---
+Nama : CHADIJAH AZ ZAHRA
+Kelas: XI MPK
+---
+Nama : CITRA AULIA SYANNI
+Kelas: XI MPK
+---
+Nama : DANIL HAMZAH
+Kelas: XI MPK
+---
+Nama : Herlina Fitriyani
+Kelas: XI MPK
+---
+Nama : Julianti Dewi Yo
+Kelas: XI MPK
+---
+Nama : KEISYA AULIA SYIFA
+Kelas: XI MPK
+---
+Nama : KEYSYA AURA BALQIS
+Kelas: XI MPK
+---
+Nama : KHEYZIA NUR ALAIKA
+Kelas: XI MPK
+---
+Nama : MEGA NIKITA SILVIYANI
+Kelas: XI MPK
+---
+Nama : Mila Rosana
+Kelas: XI MPK
+---
+Nama : MUHAMAD ALDI SETIAWAN
+Kelas: XI MPK
+---
+Nama : MUHAMMAD FAREL HOLQI
+Kelas: XI MPK
+---
+Nama : MUHAMMAD RAQIL FAHRURROZI
+Kelas: XI MPK
+---
+Nama : Myisha Arista Yulizar
+Kelas: XI MPK
+---
+Nama : NAZWA AL MAGHFIRAH
+Kelas: XI MPK
+---
+Nama : NUR KHAVIZA JULIANI
+Kelas: XI MPK
+---
+Nama : Putri Handayani
+Kelas: XI MPK
+---
+Nama : QYLA ANAYAH FASYAH
+Kelas: XI MPK
+---
+Nama : Raisya Azzahra
+Kelas: XI MPK
+---
+Nama : Rasya Fa'iq Achmad
+Kelas: XI MPK
+---
+Nama : Rhusniyati Zhafira
+Kelas: XI MPK
+---
+Nama : RIO FEBRIYANSYAH MILANO PRATAMA
+Kelas: XI MPK
+---
+Nama : RISKIA DELLA INSYIRA
+Kelas: XI MPK
+---
+Nama : SALSABIL HAIRUN NISA
+Kelas: XI MPK
+---
+Nama : SELY APRILIANI
+Kelas: XI MPK
+---
+Nama : Sulomo Hermanto
+Kelas: XI MPK
+---
+Nama : SYIRIN DWI ZAHFIRA
+Kelas: XI MPK
+---
+Nama : WENDI SAPUTRA
+Kelas: XI MPK
+---
+Nama : YESSY MARETAVIANI
+Kelas: XI MPK
+---
+Nama : ABEL AYUDYA SYIFA
+Kelas: XI ULW
+---
+Nama : Alyssa Alvira Putri
+Kelas: XI ULW
+---
+Nama : APRIANUS JULIO
+Kelas: XI ULW
+---
+Nama : ATHYYAH FAKHRUN NISA
+Kelas: XI ULW
+---
+Nama : CAHYA
+Kelas: XI ULW
+---
+Nama : Davi Azzahri
+Kelas: XI ULW
+---
+Nama : Decky Halim
+Kelas: XI ULW
+---
+Nama : DINI WIDIARTI
+Kelas: XI ULW
+---
+Nama : DISTY MARDIKA
+Kelas: XI ULW
+---
+Nama : FADILLAH
+Kelas: XI ULW
+---
+Nama : FAREL HARDIKA
+Kelas: XI ULW
+---
+Nama : KRISNA BUDI SANTOSO
+Kelas: XI ULW
+---
+Nama : Kristin Karen Tunmuni
+Kelas: XI ULW
+---
+Nama : MADA SYAIFURROSYID
+Kelas: XI ULW
+---
+Nama : Muhammad Faqki Al Farizi
+Kelas: XI ULW
+---
+Nama : MUHAMMAD SYAHFARUL
+Kelas: XI ULW
+---
+Nama : MUHTIA ADHE NOVITASARI
+Kelas: XI ULW
+---
+Nama : NADIA FATURAHMA
+Kelas: XI ULW
+---
+Nama : NOVIANTI MONICA
+Kelas: XI ULW
+---
+Nama : NUR ALAMSYAH
+Kelas: XI ULW
+---
+Nama : NUR MUHAMMAD MAULANA
+Kelas: XI ULW
+---
+Nama : Oktavianus Evan
+Kelas: XI ULW
+---
+Nama : RADITYA IRAWAN
+Kelas: XI ULW
+---
+Nama : REIHANI SAFIRA
+Kelas: XI ULW
+---
+Nama : Rizki Febrian
+Kelas: XI ULW
+---
+Nama : SALSA NABILA
+Kelas: XI ULW
+---
+Nama : SILVA RAUDHATUL AINA
+Kelas: XI ULW
+---
+Nama : Siren Aura Putri
+Kelas: XI ULW
+---
+Nama : Siti Aisyah
+Kelas: XI ULW
+---
+Nama : SRI AYUNI MULYANTI
+Kelas: XI ULW
+---
+Nama : Sri Rahayu
+Kelas: XI ULW
+---
+Nama : VIDI VINISIO
+Kelas: XI ULW
+---
+Nama : Test Student
+Kelas: XII-RPL
+---
+
+Password semua siswa: password123
