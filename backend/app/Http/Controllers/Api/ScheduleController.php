@@ -10,10 +10,34 @@ class ScheduleController extends Controller
 {
     public function index()
     {
-        $schedules = DB::table('schedules')
-            ->join('users', 'schedules.guru_id', '=', 'users.id')
-            ->select('schedules.*', 'users.name as guru_name')
+        $gurus = DB::table('users')
+            ->where('role', 'guru')
+            ->leftJoin('schedules', 'users.id', '=', 'schedules.guru_id')
+            ->select(
+                'users.id as guru_id',
+                'users.name as guru_name',
+                'schedules.id as schedule_id',
+                'schedules.hari',
+                'schedules.jam_mulai',
+                'schedules.jam_selesai',
+                'schedules.status',
+                'schedules.kuota_harian'
+            )
             ->get();
+
+        $schedules = $gurus->map(function ($guru) {
+            return [
+                'id' => $guru->schedule_id,
+                'guru_id' => $guru->guru_id,
+                'guru_name' => $guru->guru_name,
+                'hari' => $guru->hari ?? 'Setiap Hari',
+                'jam_mulai' => $guru->jam_mulai ?? '08:00:00',
+                'jam_selesai' => $guru->jam_selesai ?? '15:00:00',
+                // Always assume 'Tersedia' by default if they haven't explicitly set it to 'Penuh' or 'Sedang Cuti'
+                'status' => $guru->status ?? 'Tersedia',
+                'kuota_harian' => $guru->kuota_harian ?? 3
+            ];
+        });
 
         return response()->json([
             'success' => true,

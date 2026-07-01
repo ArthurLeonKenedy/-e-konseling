@@ -1,6 +1,8 @@
 "use client";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import toast from "react-hot-toast";
+import { useAuth } from "./hooks/AuthContext";
 
 export default function LoginPage() {
   const [role, setRole] = useState(null);
@@ -13,6 +15,7 @@ export default function LoginPage() {
   const [showPassword, setShowPassword] = useState(false);
   const [mounted, setMounted] = useState(false);
   const router = useRouter();
+  const { login } = useAuth();
 
   useEffect(() => { setMounted(true); }, []);
 
@@ -36,14 +39,14 @@ export default function LoginPage() {
         });
         const data = await response.json();
         if (data.success) {
-          alert(data.message);
+          toast.success(data.message);
           setIsForgotPassword(false);
           setPassword(""); setNisn("");
         } else {
-          alert(data.message || "Gagal mengatur ulang kata sandi.");
+          toast.error(data.message || "Gagal mengatur ulang kata sandi.");
         }
       } catch (error) {
-        alert("Terjadi kesalahan koneksi.");
+        toast.error("Terjadi kesalahan koneksi.");
       } finally {
         setIsLoading(false);
       }
@@ -61,8 +64,8 @@ export default function LoginPage() {
       });
       const data = await response.json();
       if (data.success) {
-        localStorage.setItem('user', JSON.stringify(data.user));
-        if (data.token) localStorage.setItem('api_token', data.token);
+        login(data.user, data.token);
+        
         let redirectUrl = "";
         if (role === "siswa") {
           redirectUrl = `/siswa?nama=${encodeURIComponent(data.user.name)}&kelas=${encodeURIComponent(data.user.kelas)}`;
@@ -71,12 +74,14 @@ export default function LoginPage() {
         } else {
           redirectUrl = "/admin";
         }
+        
+        toast.success("Berhasil masuk!");
         router.push(redirectUrl);
       } else {
-        alert(data.message || "Login gagal. Periksa kembali nama dan kata sandi Anda.");
+        toast.error(data.message || "Login gagal. Periksa kembali nama dan kata sandi Anda.");
       }
     } catch (error) {
-      alert("Gagal terhubung ke server.");
+      toast.error("Gagal terhubung ke server.");
     } finally {
       setIsLoading(false);
     }
@@ -164,7 +169,7 @@ export default function LoginPage() {
                 ) : (
                     <form onSubmit={handleLogin} className="text-left" style={{ animation: "fadeUp 0.4s ease both" }}>
                         <div style={{ display: 'flex', alignItems: 'center', marginBottom: '24px', gap: '16px' }}>
-                            <button type="button" onClick={() => { if (isForgotPassword) setIsForgotPassword(false); else setRole(null); }} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px', borderRadius: '50%', background: '#f3f4f6', color: '#4b5563', border: 'none', cursor: 'pointer', transition: 'all 0.2s', flexShrink: 0 }} onMouseOver={(e) => { e.currentTarget.style.background = '#e5e7eb'; e.currentTarget.style.color = '#111827'; }} onMouseOut={(e) => { e.currentTarget.style.background = '#f3f4f6'; e.currentTarget.style.color = '#4b5563'; }}>
+                            <button type="button" onClick={() => { if (isForgotPassword) setIsForgotPassword(false); else setRole(null); }} className="w-10 h-10 rounded-full bg-slate-100 text-slate-600 hover:bg-slate-200 hover:text-slate-900 transition-all flex items-center justify-center flex-shrink-0">
                                 <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" /></svg>
                             </button>
                             <div>
@@ -236,7 +241,7 @@ export default function LoginPage() {
                             <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '7px'}}>
                                 <label className="flabel" style={{marginBottom: 0}}>{isForgotPassword ? "Sandi Baru" : "Kata Sandi"}</label>
                                 {!isForgotPassword && (
-                                    <button type="button" onClick={() => setIsForgotPassword(true)} style={{fontSize: '12px', color: '#16a34a', fontWeight: 700, background: 'none', border: 'none', cursor: 'pointer', transition: 'color 0.2s'}} onMouseOver={(e) => e.currentTarget.style.color = '#15803d'} onMouseOut={(e) => e.currentTarget.style.color = '#16a34a'}>
+                                    <button type="button" onClick={() => setIsForgotPassword(true)} className="text-xs font-bold text-emerald-600 hover:text-emerald-700 transition-colors bg-transparent border-none cursor-pointer p-0">
                                         Lupa Sandi?
                                     </button>
                                 )}

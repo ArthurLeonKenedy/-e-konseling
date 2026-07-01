@@ -5,28 +5,27 @@ export default function QueueTable({
   queueTab, 
   setQueueTab, 
   newRequests, 
-  acceptedQueue, 
+  acceptedQueue,
+  historyQueue,
   unreadCounts, 
   onProcessRequest, 
   onUpdateStatus,
   onOpenProfile,
-  onRescheduleRequest
+  onRescheduleRequest,
+  onBuatLaporan
 }) {
   const [rescheduleModal, setRescheduleModal] = useState(null);
   const [rescheduleData, setRescheduleData] = useState({ tanggal: "", waktu: "" });
   const tabs = [
     { id: 'menunggu', label: 'Konfirmasi', count: newRequests.length },
-    { id: 'terjadwal', label: 'Aktif', count: acceptedQueue.filter(i => i.status === 'Terjadwal' || i.status === 'Sedang Konseling').length },
-    { id: 'selesai', label: 'Selesai', count: acceptedQueue.filter(i => i.status === 'Selesai').length },
+    { id: 'terjadwal', label: 'Aktif', count: acceptedQueue.length },
+    { id: 'riwayat', label: 'Riwayat', count: historyQueue?.length || 0 },
   ];
 
-  const filteredData = queueTab === 'menunggu' 
-    ? newRequests 
-    : acceptedQueue.filter(item => {
-        if (queueTab === 'terjadwal') return item.status === 'Terjadwal' || item.status === 'Sedang Konseling';
-        if (queueTab === 'selesai') return item.status === 'Selesai';
-        return false;
-      });
+  let filteredData = [];
+  if (queueTab === 'menunggu') filteredData = newRequests;
+  else if (queueTab === 'terjadwal') filteredData = acceptedQueue;
+  else if (queueTab === 'riwayat' || queueTab === 'selesai') filteredData = historyQueue || [];
 
   return (
     <div className="space-y-6">
@@ -97,7 +96,7 @@ export default function QueueTable({
                             <button onClick={() => setRescheduleModal(item)} className="text-xs font-bold text-amber-500 hover:text-amber-600 transition-colors uppercase tracking-widest">Ubah Waktu</button>
                             <button onClick={() => onProcessRequest(item.id, 'setuju')} className="bg-emerald-600 text-white px-5 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest shadow-lg shadow-emerald-100">Setujui</button>
                           </>
-                        ) : (
+                        ) : queueTab === 'terjadwal' ? (
                           <>
                             <Link 
                               href={`/chat?targetId=${item.studentProfile?.id}&targetName=${encodeURIComponent(item.studentName)}&targetRole=siswa`}
@@ -118,6 +117,21 @@ export default function QueueTable({
                                <option value="Selesai">Selesai</option>
                             </select>
                           </>
+                        ) : (
+                           <div className="flex items-center justify-end gap-2">
+                             <Link 
+                               href={`/chat?targetId=${item.studentProfile?.id}&targetName=${encodeURIComponent(item.studentName)}&targetRole=siswa`}
+                               className="text-xs font-bold text-emerald-600 bg-emerald-50 px-3 py-1.5 rounded-lg hover:bg-emerald-100 transition-colors"
+                             >
+                               Buka Obrolan
+                             </Link>
+                             <button
+                               onClick={() => onBuatLaporan(item.studentProfile)}
+                               className="text-xs font-bold text-white bg-slate-800 px-3 py-1.5 rounded-lg hover:bg-slate-900 transition-colors shadow-sm"
+                             >
+                               Buat Rekap
+                             </button>
+                           </div>
                         )}
                       </div>
                     </td>
@@ -184,6 +198,8 @@ function StatusBadge({ status }) {
     'Terjadwal': 'badge-success',
     'Sedang Konseling': 'badge-warning',
     'Selesai': 'badge-success',
+    'Dibatalkan': 'badge-danger',
+    'Ditolak': 'badge-danger',
     'Menunggu Konfirmasi': 'badge-warning'
   };
   return <span className={`badge ${cfg[status] || 'badge-warning'}`}>{status}</span>;

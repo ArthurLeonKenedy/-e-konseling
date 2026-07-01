@@ -18,9 +18,9 @@ class AuthController extends Controller
             'password' => 'required'
         ]);
 
-        // Cari siswa berdasarkan nama dan kelas
-        $user = User::whereRaw('LOWER(name) = ?', [strtolower($request->name)])
-                    ->where('kelas', $request->kelas)
+        // Cari siswa berdasarkan nama dan kelas (Case-Insensitive untuk SQLite)
+        $user = User::whereRaw('LOWER(name) = ?', [strtolower(trim($request->name))])
+                    ->whereRaw('LOWER(kelas) = ?', [strtolower(trim($request->kelas))])
                     ->where('role', 'siswa')
                     ->first();
 
@@ -58,7 +58,7 @@ class AuthController extends Controller
         ]);
 
         // Cari guru berdasarkan nama
-        $user = User::whereRaw('LOWER(name) = ?', [strtolower($request->name)])
+        $user = User::whereRaw('LOWER(name) = ?', [strtolower(trim($request->name))])
                     ->where('role', 'guru')
                     ->first();
 
@@ -95,7 +95,7 @@ class AuthController extends Controller
         ]);
 
         // Cari admin berdasarkan nama
-        $user = User::whereRaw('LOWER(name) = ?', [strtolower($request->name)])
+        $user = User::whereRaw('LOWER(name) = ?', [strtolower(trim($request->name))])
                     ->where('role', 'admin')
                     ->first();
 

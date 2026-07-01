@@ -27,6 +27,7 @@ function GuruDashboardContent() {
   // States
   const [newRequests, setNewRequests] = useState([]);
   const [acceptedQueue, setAcceptedQueue] = useState([]);
+  const [historyQueue, setHistoryQueue] = useState([]);
   const [unreadCounts, setUnreadCounts] = useState({});
   const [allKonseling, setAllKonseling] = useState([]);
   const [allStudents, setAllStudents] = useState([]);
@@ -74,9 +75,13 @@ function GuruDashboardContent() {
       if (konsData.success) {
         setAllKonseling(konsData.data);
         const pending = konsData.data.filter(k => k.status === 'Menunggu Konfirmasi').map(mapToFrontendFormat);
-        const accepted = konsData.data.filter(k => k.status !== 'Menunggu Konfirmasi' && k.status !== 'Ditolak').map(mapToFrontendFormat);
+        const activeStatuses = ['Terjadwal', 'Sedang Konseling', 'Usulan Reschedule'];
+        const historyStatuses = ['Selesai', 'Dibatalkan', 'Ditolak'];
+        const accepted = konsData.data.filter(k => activeStatuses.includes(k.status)).map(mapToFrontendFormat);
+        const history = konsData.data.filter(k => historyStatuses.includes(k.status)).map(mapToFrontendFormat);
         setNewRequests(pending);
         setAcceptedQueue(accepted);
+        setHistoryQueue(history);
       }
 
       const unreadData = await unreadRes.json();
@@ -198,6 +203,27 @@ function GuruDashboardContent() {
     if ((await res.json()).success) fetchLaporan();
   };
 
+  // Derived Data
+  const counseledStudents = useMemo(() => {
+    const map = new Map();
+    allKonseling.forEach(k => {
+      if (k.siswa) {
+        map.set(k.siswa.id, k.siswa);
+      }
+    });
+    return Array.from(map.values());
+  }, [allKonseling]);
+
+  const handleBuatLaporan = (studentProfile) => {
+    if (!studentProfile) return;
+    setActiveTab('laporan-kasus');
+    setShowLaporanForm(true);
+    setLaporanForm(prev => ({
+      ...prev,
+      siswa_id: studentProfile.id
+    }));
+  };
+
   // Charts Logic
   const categoryData = useMemo(() => {
     const counts = {};
@@ -251,10 +277,11 @@ function GuruDashboardContent() {
           {activeTab === 'antrean' && (
             <QueueTable
               queueTab={queueTab} setQueueTab={setQueueTab}
-              newRequests={newRequests} acceptedQueue={acceptedQueue} unreadCounts={unreadCounts}
+              newRequests={newRequests} acceptedQueue={acceptedQueue} historyQueue={historyQueue} unreadCounts={unreadCounts}
               onProcessRequest={handleProcessRequest} onUpdateStatus={handleUpdateStatus}
               onOpenProfile={setSelectedStudentProfile}
               onRescheduleRequest={handleReschedule}
+              onBuatLaporan={handleBuatLaporan}
             />
           )}
 
@@ -268,7 +295,7 @@ function GuruDashboardContent() {
 
           {activeTab === 'laporan-kasus' && (
             <LaporanManagement
-              allLaporan={allLaporan} allStudents={allStudents}
+              allLaporan={allLaporan} allStudents={counseledStudents}
               isLoadingLaporan={isLoading.laporan} showLaporanForm={showLaporanForm}
               setShowLaporanForm={setShowLaporanForm} laporanStatusFilter={laporanStatusFilter}
               setLaporanStatusFilter={setLaporanStatusFilter} laporanForm={laporanForm}
