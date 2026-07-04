@@ -162,12 +162,23 @@ export default function QueueTable({
               </div>
               <div>
                 <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Jam Baru</label>
-                <input 
-                  type="time" 
+                <select 
                   className="input-field" 
                   value={rescheduleData.waktu}
                   onChange={(e) => setRescheduleData({...rescheduleData, waktu: e.target.value})}
-                />
+                >
+                   <option value="" disabled>Pilih Jam Baru</option>
+                   <option value="10:30">10:30 WIB</option>
+                   <option value="11:00">11:00 WIB</option>
+                   <option value="11:30">11:30 WIB</option>
+                   <option value="12:00">12:00 WIB</option>
+                   <option value="12:30">12:30 WIB</option>
+                   <option value="13:00">13:00 WIB</option>
+                   <option value="13:30">13:30 WIB</option>
+                   <option value="14:00">14:00 WIB</option>
+                   <option value="14:30">14:30 WIB</option>
+                   <option value="15:00">15:00 WIB</option>
+                </select>
               </div>
             </div>
 

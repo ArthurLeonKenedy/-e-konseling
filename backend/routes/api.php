@@ -18,8 +18,8 @@ Route::post('/login/admin',    [AuthController::class, 'loginAdmin'])->middlewar
 Route::post('/reset-password', [AuthController::class, 'resetPassword'])->middleware('throttle:3,1');
 
 // Jadwal guru tetap publik agar siswa bisa lihat sebelum login
-// (bisa diprot eksi jika diinginkan, tapi tidak krusial)
 Route::get('/schedules', [ScheduleController::class, 'index']);
+
 
 // ============================================================
 // ROUTE TERPROTEKSI — wajib menyertakan Bearer Token
@@ -35,6 +35,25 @@ Route::middleware('auth:sanctum')->group(function () {
     // Data pengguna (Sanctum built-in)
     Route::get('/user', function (Request $request) {
         return $request->user();
+    });
+
+    // Profil lengkap dari database — digunakan frontend untuk re-validasi data
+    Route::get('/me', function (Request $request) {
+        $user = $request->user();
+        return response()->json([
+            'success' => true,
+            'data' => [
+                'id'                 => $user->id,
+                'name'               => $user->name,
+                'kelas'              => $user->kelas,
+                'role'               => $user->role,
+                'nisn'               => $user->nisn,
+                'nip'                => $user->nip,
+                'photo'              => $user->photo,
+                'hobi'               => $user->hobi,
+                'rencana_masa_depan' => $user->rencana_masa_depan,
+            ]
+        ]);
     });
 
     // Update Last Seen

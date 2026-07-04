@@ -1,4 +1,5 @@
 "use client";
+import { useState } from "react";
 
 export default function LaporanManagement({ 
   allLaporan, 
@@ -15,9 +16,48 @@ export default function LaporanManagement({
   onEditStatus,
   onDeleteLaporan
 }) {
-  const filteredLaporan = allLaporan.filter(l => 
+  const [downloadingId, setDownloadingId] = useState(null);
+
+  const filteredLaporan = allLaporan.filter(l =>
     laporanStatusFilter === 'semua' ? true : l.status === laporanStatusFilter
   );
+
+  // Download PDF menggunakan fetch + blob agar Authorization header bisa dikirim
+  // Ini lebih handal dibanding link <a> langsung yang tidak bisa kirim header
+  const handleDownloadPDF = async (lap) => {
+    if (downloadingId === lap.id) return; // cegah double-click
+    setDownloadingId(lap.id);
+    try {
+      const token = localStorage.getItem('api_token');
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
+      const res = await fetch(`${apiUrl}/api/laporan/${lap.id}/export-pdf?token=${encodeURIComponent(token)}`, {
+        method: 'GET',
+        headers: { 'Authorization': `Bearer ${token}` },
+      });
+
+      if (!res.ok) {
+        const err = await res.json();
+        alert(err.message || 'Gagal mengunduh PDF.');
+        return;
+      }
+
+      // Buat URL sementara dari blob lalu trigger download
+      const blob = await res.blob();
+      const url = window.URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = `Laporan_Konseling_${lap.siswa?.name || 'Siswa'}_${new Date().toLocaleDateString('id-ID').replace(/\//g, '')}.pdf`;
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      window.URL.revokeObjectURL(url);
+    } catch (err) {
+      console.error('Download PDF error:', err);
+      alert('Gagal mengunduh PDF. Pastikan server berjalan.');
+    } finally {
+      setDownloadingId(null);
+    }
+  };
 
   return (
     <div className="space-y-8">
@@ -148,13 +188,18 @@ export default function LaporanManagement({
                       </td>
                       <td className="text-right">
                         <div className="flex justify-end gap-2">
-                          <a 
-                            href={`${process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000"}/api/laporan/${lap.id}/export-pdf`} 
-                            target="_blank" rel="noreferrer"
-                            className="w-9 h-9 flex items-center justify-center rounded-xl bg-slate-50 text-slate-400 hover:text-red-500 transition-all border border-slate-100" title="Cetak PDF"
+                          <button
+                            onClick={() => handleDownloadPDF(lap)}
+                            disabled={downloadingId === lap.id}
+                            className="w-9 h-9 flex items-center justify-center rounded-xl bg-slate-50 text-slate-400 hover:text-red-500 transition-all border border-slate-100 disabled:opacity-50 disabled:cursor-not-allowed" 
+                            title={downloadingId === lap.id ? 'Sedang mengunduh...' : 'Unduh PDF'}
                           >
-                             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
-                          </a>
+                            {downloadingId === lap.id ? (
+                              <svg className="w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" strokeOpacity="0.25"/><path fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"/></svg>
+                            ) : (
+                              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+                            )}
+                          </button>
                           <button onClick={() => onEditStatus(lap)} className="w-9 h-9 flex items-center justify-center rounded-xl bg-slate-50 text-slate-400 hover:text-emerald-600 transition-all border border-slate-100"><svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" /></svg></button>
                           <button onClick={() => onDeleteLaporan(lap.id)} className="w-9 h-9 flex items-center justify-center rounded-xl bg-slate-50 text-slate-400 hover:text-red-400 transition-all border border-slate-100"><svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg></button>
                         </div>

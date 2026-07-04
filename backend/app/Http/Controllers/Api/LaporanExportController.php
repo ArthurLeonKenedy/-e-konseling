@@ -16,9 +16,10 @@ class LaporanExportController extends Controller
 
             $pdf = Pdf::loadView('pdf.laporan_kasus', compact('laporan'));
 
-            // Menggunakan stream agar bisa dipreview di browser atau download
-            return $pdf->download('Laporan_Konseling_' . $laporan->siswa->name . '_' . date('dmY') . '.pdf');
-            
+            $filename = 'Laporan_Konseling_' . ($laporan->siswa->name ?? 'Siswa') . '_' . date('dmY') . '.pdf';
+
+            return $pdf->download($filename);
+
         } catch (\Exception $e) {
             return response()->json([
                 'success' => false,

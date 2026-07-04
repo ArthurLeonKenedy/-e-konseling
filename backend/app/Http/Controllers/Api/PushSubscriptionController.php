@@ -13,8 +13,8 @@ class PushSubscriptionController extends Controller
     public function subscribe(Request $request)
     {
         $request->validate([
-            'user_id' => 'required',
-            'subscription' => 'required|array',
+            'user_id'               => 'required|exists:users,id',
+            'subscription'          => 'required|array',
             'subscription.endpoint' => 'required|url',
         ]);
 
@@ -23,12 +23,15 @@ class PushSubscriptionController extends Controller
         DB::table('push_subscriptions')->updateOrInsert(
             ['endpoint' => $sub['endpoint']],
             [
-                'user_id' => $request->user_id,
-                'public_key' => $sub['keys']['p256dh'] ?? null,
-                'auth_token' => $sub['keys']['auth'] ?? null,
-                'content_encoding' => 'aesgcm', // Default for modern browsers
-                'updated_at' => now(),
-                'created_at' => now(),
+                'user_id'           => $request->user_id,
+                // subscribable_* wajib diisi agar HasPushSubscriptions bisa query dengan benar
+                'subscribable_type' => 'App\\Models\\User',
+                'subscribable_id'   => $request->user_id,
+                'public_key'        => $sub['keys']['p256dh'] ?? null,
+                'auth_token'        => $sub['keys']['auth'] ?? null,
+                'content_encoding'  => 'aesgcm',
+                'updated_at'        => now(),
+                'created_at'        => now(),
             ]
         );
 

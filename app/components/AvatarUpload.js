@@ -17,7 +17,9 @@ export default function AvatarUpload({ user, onUploadSuccess, size = "w-10 h-10"
     fd.append('photo', file);
 
     try {
-      const res = await apiFetch(`/api/update-profile`, { method: "POST", body: fd });
+      const httpRes = await apiFetch(`/api/update-profile`, { method: "POST", body: fd });
+      // Wajib parse JSON terlebih dahulu
+      const res = await httpRes.json();
       if (res.success) {
         const updatedUser = { ...user, photo: res.user.photo };
         localStorage.setItem('user', JSON.stringify(updatedUser));

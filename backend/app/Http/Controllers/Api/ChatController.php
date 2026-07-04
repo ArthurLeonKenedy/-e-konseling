@@ -117,13 +117,16 @@ class ChatController extends Controller
     }
 
     // Ambil daftar percakapan (inbox) dengan user unik beserta pesan terakhir
+    // OPTIMIZED: Menggunakan satu query + eager loading untuk menghindari N+1 problem
     public function getConversations(Request $request)
     {
         $userId = $request->user()->id;
 
-        // Ambil semua pesan yang melibatkan user ini, urutkan dari yang terbaru
+        // Ambil semua pesan yang melibatkan user ini, eager load sender & receiver sekaligus
         $messages = Message::where('sender_id', $userId)
                         ->orWhere('receiver_id', $userId)
+                        ->with(['sender:id,name,role,kelas,photo,last_seen_at',
+                                'receiver:id,name,role,kelas,photo,last_seen_at'])
                         ->orderBy('created_at', 'desc')
                         ->get();
 
@@ -131,29 +134,29 @@ class ChatController extends Controller
 
         foreach ($messages as $msg) {
             $otherId = $msg->sender_id === $userId ? $msg->receiver_id : $msg->sender_id;
-            
-            if (!isset($conversations[$otherId])) {
-                $otherUser = \App\Models\User::find($otherId);
-                if ($otherUser) {
-                    $conversations[$otherId] = [
-                        'user' => [
-                            'id' => $otherUser->id,
-                            'name' => $otherUser->name,
-                            'role' => $otherUser->role,
-                            'kelas' => $otherUser->kelas,
-                            'photo' => $otherUser->photo,
-                            'last_seen_at' => $otherUser->last_seen_at
-                        ],
-                        'latest_message' => [
-                            'id' => $msg->id,
-                            'message' => $msg->message,
-                            'created_at' => $msg->created_at,
-                            'sender_id' => $msg->sender_id,
-                            'is_read' => $msg->is_read
-                        ],
-                        'unread_count' => 0
-                    ];
-                }
+
+            // Ambil data user dari relasi yang sudah di-eager load (tanpa query tambahan)
+            $otherUser = $msg->sender_id === $userId ? $msg->receiver : $msg->sender;
+
+            if (!isset($conversations[$otherId]) && $otherUser) {
+                $conversations[$otherId] = [
+                    'user' => [
+                        'id'           => $otherUser->id,
+                        'name'         => $otherUser->name,
+                        'role'         => $otherUser->role,
+                        'kelas'        => $otherUser->kelas,
+                        'photo'        => $otherUser->photo,
+                        'last_seen_at' => $otherUser->last_seen_at,
+                    ],
+                    'latest_message' => [
+                        'id'         => $msg->id,
+                        'message'    => $msg->message,
+                        'created_at' => $msg->created_at,
+                        'sender_id'  => $msg->sender_id,
+                        'is_read'    => $msg->is_read,
+                    ],
+                    'unread_count' => 0,
+                ];
             }
 
             // Hitung unread (pesan yang diterima oleh kita dan belum dibaca)
@@ -166,7 +169,7 @@ class ChatController extends Controller
 
         return response()->json([
             'success' => true,
-            'data' => array_values($conversations)
+            'data'    => array_values($conversations),
         ]);
     }
 

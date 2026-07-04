@@ -102,23 +102,45 @@ export default function ScheduleManagement() {
           </div>
           <div className="space-y-2">
             <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">Jam Mulai</label>
-            <input 
-              type="time" 
+            <select 
               value={schedule.jam_mulai} 
               onChange={(e) => setSchedule({...schedule, jam_mulai: e.target.value})} 
               required 
-              className="input-field" 
-            />
+              className="input-field"
+            >
+               <option value="" disabled>Pilih Jam Mulai</option>
+               <option value="10:30">10:30 WIB</option>
+               <option value="11:00">11:00 WIB</option>
+               <option value="11:30">11:30 WIB</option>
+               <option value="12:00">12:00 WIB</option>
+               <option value="12:30">12:30 WIB</option>
+               <option value="13:00">13:00 WIB</option>
+               <option value="13:30">13:30 WIB</option>
+               <option value="14:00">14:00 WIB</option>
+               <option value="14:30">14:30 WIB</option>
+               <option value="15:00">15:00 WIB</option>
+            </select>
           </div>
           <div className="space-y-2">
             <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">Jam Selesai</label>
-            <input 
-              type="time" 
+            <select 
               value={schedule.jam_selesai} 
               onChange={(e) => setSchedule({...schedule, jam_selesai: e.target.value})} 
               required 
-              className="input-field" 
-            />
+              className="input-field"
+            >
+               <option value="" disabled>Pilih Jam Selesai</option>
+               <option value="10:30">10:30 WIB</option>
+               <option value="11:00">11:00 WIB</option>
+               <option value="11:30">11:30 WIB</option>
+               <option value="12:00">12:00 WIB</option>
+               <option value="12:30">12:30 WIB</option>
+               <option value="13:00">13:00 WIB</option>
+               <option value="13:30">13:30 WIB</option>
+               <option value="14:00">14:00 WIB</option>
+               <option value="14:30">14:30 WIB</option>
+               <option value="15:00">15:00 WIB</option>
+            </select>
           </div>
           <div className="space-y-2 md:col-span-2 mt-2">
             <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">Kuota Harian (Maksimal Siswa Per Hari)</label>
