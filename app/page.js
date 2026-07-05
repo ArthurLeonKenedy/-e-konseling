@@ -93,8 +93,8 @@ export default function LoginPage() {
     <div className="page">
       <div className="left">
         <div className="logo-row">
-            <div className="logo-box">
-                E
+            <div className="logo-box" style={{ padding: '6px' }}>
+                <img src="/logo-smkn1.jpg" alt="Logo SMKN 1 Pontianak" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
             </div>
             <div className="logo-text">
                 <div className="title">E-Konseling</div>
@@ -107,6 +107,7 @@ export default function LoginPage() {
             <p>Sistem informasi bimbingan konseling terpadu yang memfasilitasi komunikasi antara siswa dan guru BK secara efektif dan rahasia.</p>
         </div>
 
+
         <div className="left-foot">
             © {new Date().getFullYear()} SMK Negeri 1 Pontianak. All rights reserved.
         </div>
@@ -114,7 +115,6 @@ export default function LoginPage() {
 
       <div className="right">
         <div className="card">
-            <div className="card-top-bar"></div>
             <div className="card-body text-center">
                 <div className="card-brand">
                     <h2 className="card-title">
@@ -169,14 +169,14 @@ export default function LoginPage() {
                 ) : (
                     <form onSubmit={handleLogin} className="text-left" style={{ animation: "fadeUp 0.4s ease both" }}>
                         <div style={{ display: 'flex', alignItems: 'center', marginBottom: '24px', gap: '16px' }}>
-                            <button type="button" onClick={() => { if (isForgotPassword) setIsForgotPassword(false); else setRole(null); }} className="w-10 h-10 rounded-full bg-slate-100 text-slate-600 hover:bg-slate-200 hover:text-slate-900 transition-all flex items-center justify-center flex-shrink-0">
+                            <button type="button" onClick={() => { if (isForgotPassword) setIsForgotPassword(false); else setRole(null); }} className="w-10 h-10 rounded-full bg-white/5 text-slate-400 hover:bg-white/10 hover:text-white transition-all flex items-center justify-center flex-shrink-0 border border-white/10">
                                 <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" /></svg>
                             </button>
                             <div>
-                                <h3 style={{ fontSize: '18px', fontWeight: 800, color: '#111827', lineHeight: 1.2 }}>
+                                <h3 style={{ fontSize: '18px', fontWeight: 800, color: '#f8fafc', lineHeight: 1.2 }}>
                                     {isForgotPassword ? "Atur Ulang Sandi" : `Portal ${role.charAt(0).toUpperCase() + role.slice(1)}`}
                                 </h3>
-                                <p style={{ fontSize: '13px', color: '#6b7280', marginTop: '2px', fontWeight: 500 }}>
+                                <p style={{ fontSize: '13px', color: '#94a3b8', marginTop: '2px', fontWeight: 500 }}>
                                     {isForgotPassword ? "Masukkan data untuk memverifikasi" : "Silakan login untuk melanjutkan"}
                                 </p>
                             </div>
@@ -241,7 +241,7 @@ export default function LoginPage() {
                             <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '7px'}}>
                                 <label className="flabel" style={{marginBottom: 0}}>{isForgotPassword ? "Sandi Baru" : "Kata Sandi"}</label>
                                 {!isForgotPassword && (
-                                    <button type="button" onClick={() => setIsForgotPassword(true)} className="text-xs font-bold text-emerald-600 hover:text-emerald-700 transition-colors bg-transparent border-none cursor-pointer p-0">
+                                    <button type="button" onClick={() => setIsForgotPassword(true)} className="text-xs font-bold text-emerald-400 hover:text-emerald-300 transition-colors bg-transparent border-none cursor-pointer p-0">
                                         Lupa Sandi?
                                     </button>
                                 )}

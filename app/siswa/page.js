@@ -200,7 +200,7 @@ function SiswaDashboardContent() {
       <aside className={`dash-sidebar ${isSidebarOpen ? 'open' : ''}`}>
         <div className="dash-sidebar-header">
           <div className="flex items-center gap-4">
-            <AvatarUpload user={user} onUploadSuccess={setUser} />
+            <img src="/logo-smkn1.jpg" alt="Logo SMKN 1" className="w-[52px] h-[52px] rounded-xl object-contain bg-white p-1 shadow-sm border border-slate-700/50" />
             <div>
               <h1 className="text-[15px] font-extrabold tracking-tight">Portal Siswa</h1>
               <p className="text-[10px] font-bold text-emerald-400 tracking-[0.15em] uppercase mt-0.5">E-Konseling</p>
@@ -225,7 +225,7 @@ function SiswaDashboardContent() {
       <main className="dash-content">
         <div className="mobile-topbar">
           <div className="flex items-center gap-3">
-             <div className="w-8 h-8 rounded-lg bg-emerald-600 flex items-center justify-center font-bold text-white shadow-lg">E</div>
+             <img src="/logo-smkn1.jpg" alt="Logo" className="w-8 h-8 rounded-lg object-contain bg-white p-0.5 shadow-sm border border-slate-200" />
              <span className="font-extrabold text-slate-800">E-Konseling</span>
           </div>
           <button onClick={() => setIsSidebarOpen(true)} className="p-2 -mr-2 text-slate-500 hover:text-slate-800 focus:outline-none">

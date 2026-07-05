@@ -39,9 +39,9 @@ html, body { height: 100%; font-family: var(--font-sans); -webkit-font-smoothing
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background: url("https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=2070&auto=format&fit=crop") no-repeat center 65%;
-    background-size: cover;
+    background: linear-gradient(135deg, #064e3b 0%, #022c22 40%, #020617 100%);
     position: relative;
+    overflow: hidden;
 }
 
 @media (min-width: 1024px) {
@@ -53,20 +53,18 @@ html, body { height: 100%; font-family: var(--font-sans); -webkit-font-smoothing
 .page::before {
     content: '';
     position: absolute; inset: 0;
-    background: linear-gradient(
-        110deg,
-        rgba(5, 46, 22, 0.93) 0%,
-        rgba(5, 46, 22, 0.88) 40%,
-        rgba(5, 46, 22, 0.70) 65%,
-        rgba(0, 0, 0, 0.50) 100%
-    );
+    background: 
+        radial-gradient(circle at 0% 0%, rgba(16, 185, 129, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 100% 100%, rgba(5, 150, 105, 0.15) 0%, transparent 50%);
     z-index: 1;
+    pointer-events: none;
 }
 
 .page::after {
     content: '';
     position: absolute; inset: 0;
-    background: radial-gradient(ellipse at 20% 50%, rgba(22, 163, 74, 0.15) 0%, transparent 65%);
+    background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 24px 24px;
     z-index: 1;
     pointer-events: none;
 }
@@ -191,14 +189,15 @@ html, body { height: 100%; font-family: var(--font-sans); -webkit-font-smoothing
 }
 
 .card {
-    background: rgba(255, 255, 255, 0.97);
-    backdrop-filter: blur(30px);
-    -webkit-backdrop-filter: blur(30px);
+    background: rgba(15, 23, 42, 0.45);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
     border-radius: 28px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
     width: 100%; max-width: 420px;
     box-shadow:
-        0 30px 80px rgba(0, 0, 0, 0.35),
-        0 0 0 1px rgba(255,255,255,0.4);
+        0 30px 80px rgba(0, 0, 0, 0.5),
+        inset 0 1px 0 rgba(255,255,255,0.1);
     position: relative;
     overflow: hidden;
     animation: fadeUp 0.7s 0.1s ease both;
@@ -222,16 +221,16 @@ html, body { height: 100%; font-family: var(--font-sans); -webkit-font-smoothing
 
 .card-title {
     font-family: var(--font-jakarta);
-    font-size: 22px; font-weight: 900; color: #15803d;
+    font-size: 22px; font-weight: 900; color: #4ade80;
     letter-spacing: -0.01em;
 }
 
-.card-sub { font-size: 12.5px; font-weight: 600; color: #6b7280; margin-top: 4px; }
+.card-sub { font-size: 12.5px; font-weight: 600; color: #94a3b8; margin-top: 4px; }
 
 .field { margin-bottom: 18px; text-align: left; }
 .flabel {
     display: block; font-size: 11px; font-weight: 700;
-    color: #374151; letter-spacing: 0.08em;
+    color: #cbd5e1; letter-spacing: 0.08em;
     text-transform: uppercase; margin-bottom: 7px;
 }
 
@@ -258,10 +257,10 @@ html, body { height: 100%; font-family: var(--font-sans); -webkit-font-smoothing
 
 .finput, .input-field {
     width: 100%; padding: 14px 18px;
-    border: 2px solid #e5e7eb;
+    border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 14px;
-    background: #f9fafb;
-    font-size: 15px; color: #1f2937;
+    background: rgba(255, 255, 255, 0.05);
+    font-size: 15px; color: #f8fafc;
     font-family: var(--font-sans);
     outline: none;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -272,9 +271,9 @@ html, body { height: 100%; font-family: var(--font-sans); -webkit-font-smoothing
 }
 
 .finput:focus, .input-field:focus {
-    border-color: #16a34a;
-    background: #fff;
-    box-shadow: 0 4px 12px rgba(22, 163, 74, 0.08), 0 0 0 4px rgba(22, 163, 74, 0.15);
+    border-color: #4ade80;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 12px rgba(74, 222, 128, 0.1), 0 0 0 4px rgba(74, 222, 128, 0.15);
     transform: translateY(-1px);
 }
 
@@ -346,8 +345,8 @@ html, body { height: 100%; font-family: var(--font-sans); -webkit-font-smoothing
 .mode-btn {
     padding: 16px 20px;
     border-radius: 20px;
-    border: 2px solid #e5e7eb;
-    background: #ffffff;
+    border: 1px solid rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.03);
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     display: flex;
@@ -364,37 +363,37 @@ html, body { height: 100%; font-family: var(--font-sans); -webkit-font-smoothing
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
     border-radius: 18px;
-    box-shadow: 0 0 0 0 rgba(22, 163, 74, 0);
+    box-shadow: 0 0 0 0 rgba(74, 222, 128, 0);
     transition: all 0.3s ease;
     pointer-events: none;
 }
 
 .mode-btn:hover {
-    border-color: #16a34a;
-    background: #fdfdfd;
+    border-color: #4ade80;
+    background: rgba(255,255,255,0.08);
     transform: translateY(-3px);
-    box-shadow: 0 12px 25px rgba(22, 163, 74, 0.12);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
 }
 
 .mode-btn:hover::after {
-    box-shadow: inset 0 0 0 1px rgba(22, 163, 74, 0.1);
+    box-shadow: inset 0 0 0 1px rgba(74, 222, 128, 0.2);
 }
 
 .mode-btn-icon {
     width: 52px; height: 52px;
     border-radius: 16px;
-    background: #f0fdf4;
-    color: #16a34a;
+    background: rgba(22, 163, 74, 0.2);
+    color: #4ade80;
     display: flex; align-items: center; justify-content: center;
     flex-shrink: 0;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .mode-btn:hover .mode-btn-icon {
-    background: #16a34a;
-    color: #ffffff;
+    background: #4ade80;
+    color: #022c22;
     transform: scale(1.05) rotate(-5deg);
-    box-shadow: 0 8px 20px rgba(22, 163, 74, 0.25);
+    box-shadow: 0 8px 20px rgba(74, 222, 128, 0.25);
 }
 
 .mode-btn-content {
@@ -405,14 +404,14 @@ html, body { height: 100%; font-family: var(--font-sans); -webkit-font-smoothing
     font-family: var(--font-jakarta);
     font-size: 17px;
     font-weight: 800;
-    color: #111827;
+    color: #f8fafc;
     margin-bottom: 2px;
     transition: color 0.3s ease;
 }
 
 .mode-btn-desc {
     font-size: 11px;
-    color: #6b7280;
+    color: #94a3b8;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     font-weight: 700;
