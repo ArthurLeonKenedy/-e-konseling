@@ -4,6 +4,7 @@ import { useSearchParams, useRouter } from "next/navigation";
 import { useAuthGuard } from "../hooks/useAuthGuard";
 import NotificationBanner from "../components/NotificationBanner";
 import AvatarUpload from "../components/AvatarUpload";
+import CalendarPicker from "../components/CalendarPicker";
 import Link from "next/link";
 import { apiFetch } from "../../lib/apiFetch";
 
@@ -27,6 +28,7 @@ function SiswaDashboardContent() {
   const [category, setCategory] = useState("");
   const [topic, setTopic] = useState("");
   const [bookingDate, setBookingDate] = useState("");
+  const [bookedDates, setBookedDates] = useState([]);
   const [bookingTime, setBookingTime] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
@@ -100,6 +102,24 @@ function SiswaDashboardContent() {
     const inv = setInterval(fetchData, 15000);
     return () => clearInterval(inv);
   }, []);
+
+  useEffect(() => {
+    if (selectedSchedule) {
+      const fetchBookedDates = async () => {
+        try {
+          const res = await apiFetch(`/api/konselings?guru_id=${selectedSchedule.guruId}`);
+          const data = await res.json();
+          if (data.success) {
+            const dates = data.data
+               .filter(k => ['Menunggu Konfirmasi', 'Terjadwal', 'Sedang Konseling'].includes(k.status))
+               .map(k => k.tanggal);
+            setBookedDates([...new Set(dates)]);
+          }
+        } catch(e) { console.error(e); }
+      };
+      fetchBookedDates();
+    }
+  }, [selectedSchedule]);
 
   const handleBookingSubmit = async (e) => {
     e.preventDefault();
@@ -443,8 +463,8 @@ function SiswaDashboardContent() {
 
       {/* Booking Modal */}
       {selectedSchedule && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-6 bg-slate-900/60 backdrop-blur-sm">
-           <form onSubmit={handleBookingSubmit} className="dash-card w-full max-w-lg animate-scaleIn shadow-2xl relative">
+         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 bg-slate-900/60 backdrop-blur-sm">
+            <form onSubmit={handleBookingSubmit} className="dash-card w-full max-w-lg animate-scaleIn shadow-2xl relative max-h-[95vh] overflow-y-auto overflow-x-hidden">
               {isSuccess ? (
                 <div className="py-12 text-center space-y-4">
                    <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto text-3xl">✓</div>
@@ -453,64 +473,70 @@ function SiswaDashboardContent() {
                 </div>
               ) : (
                 <>
-                  <div className="flex items-center justify-between mb-8">
+                  <div className="flex items-center justify-between mb-6 sticky top-0 bg-white/95 backdrop-blur z-10 pb-2 border-b border-slate-100">
                      <h4 className="text-xl font-bold text-slate-900 tracking-tight">Ajukan Konseling</h4>
-                     <button type="button" onClick={() => setSelectedSchedule(null)} className="text-slate-400 hover:text-red-500 transition-colors">✕</button>
+                     <button type="button" onClick={() => setSelectedSchedule(null)} className="text-slate-400 hover:text-red-500 transition-colors bg-slate-50 p-1.5 rounded-lg hover:bg-red-50">✕</button>
                   </div>
 
-                  <div className="flex items-center gap-4 p-4 rounded-xl bg-slate-50 mb-6">
-                     <div className="w-10 h-10 rounded-lg bg-emerald-600 text-white flex items-center justify-center font-bold">{selectedSchedule.name.charAt(0)}</div>
-                     <div>
-                        <p className="text-xs font-bold text-slate-400 uppercase tracking-widest">Target Konsultasi</p>
-                        <p className="text-sm font-bold text-slate-900">{selectedSchedule.name}</p>
+                  <div className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 rounded-2xl bg-gradient-to-br from-emerald-50 to-teal-50 border border-emerald-100/50 mb-5 shadow-sm">
+                     <div className="w-10 h-10 sm:w-12 sm:h-12 flex-shrink-0 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-600 text-white flex items-center justify-center font-bold shadow-md text-lg">{selectedSchedule.name.charAt(0)}</div>
+                     <div className="min-w-0">
+                        <p className="text-[9px] sm:text-[10px] font-extrabold text-emerald-600/80 uppercase tracking-widest mb-0.5">Target Konsultasi</p>
+                        <p className="text-sm sm:text-[15px] font-bold text-slate-900 tracking-tight truncate">{selectedSchedule.name}</p>
                      </div>
                   </div>
 
-                  <div className="space-y-4">
-                     <div className="grid grid-cols-2 gap-4">
-                        <div className="space-y-1">
-                           <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">Kategori</label>
-                           <select value={category} onChange={(e) => setCategory(e.target.value)} required className="input-field">
-                              <option value="">Pilih Kategori</option>
-                              <option value="Akademik">Akademik</option>
-                              <option value="Sosial">Sosial</option>
-                              <option value="Pribadi">Pribadi</option>
-                              <option value="Karier">Karier</option>
-                           </select>
+                  <div className="space-y-4 sm:space-y-5">
+                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                           <div className="space-y-1.5">
+                              <label className="text-[10px] font-extrabold text-slate-400 uppercase tracking-widest ml-1">Kategori</label>
+                              <select value={category} onChange={(e) => setCategory(e.target.value)} required className={`input-field cursor-pointer transition-colors ${!category ? 'text-slate-400' : 'text-slate-800'}`}>
+                                 <option value="" disabled className="text-slate-400">Pilih Kategori</option>
+                                 <option value="Akademik" className="text-slate-800">Akademik</option>
+                                 <option value="Sosial" className="text-slate-800">Sosial</option>
+                                 <option value="Pribadi" className="text-slate-800">Pribadi</option>
+                                 <option value="Karier" className="text-slate-800">Karier</option>
+                              </select>
+                           </div>
+                           <div className="space-y-1.5">
+                              <label className="text-[10px] font-extrabold text-slate-400 uppercase tracking-widest ml-1">Jam Pertemuan</label>
+                              <select 
+                                 value={bookingTime} 
+                                 onChange={(e) => setBookingTime(e.target.value)} 
+                                 required 
+                                 className={`input-field cursor-pointer transition-colors ${!bookingTime ? 'text-slate-400' : 'text-slate-800'}`}
+                              >
+                                 <option value="" disabled className="text-slate-400">Pilih Jam Pertemuan</option>
+                                 <option value="10:30" className="text-slate-800">10:30 WIB</option>
+                                 <option value="11:00" className="text-slate-800">11:00 WIB</option>
+                                 <option value="11:30" className="text-slate-800">11:30 WIB</option>
+                                 <option value="12:00" className="text-slate-800">12:00 WIB</option>
+                                 <option value="12:30" className="text-slate-800">12:30 WIB</option>
+                                 <option value="13:00" className="text-slate-800">13:00 WIB</option>
+                                 <option value="13:30" className="text-slate-800">13:30 WIB</option>
+                                 <option value="14:00" className="text-slate-800">14:00 WIB</option>
+                                 <option value="14:30" className="text-slate-800">14:30 WIB</option>
+                                 <option value="15:00" className="text-slate-800">15:00 WIB</option>
+                              </select>
+                           </div>
                         </div>
-                        <div className="space-y-1">
-                           <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">Tanggal</label>
-                           <input type="date" value={bookingDate} onChange={(e) => setBookingDate(e.target.value)} required className="input-field" min={new Date().toISOString().split('T')[0]} />
+                        <div className="space-y-1.5 mt-2">
+                           <label className="text-[10px] font-extrabold text-slate-400 uppercase tracking-widest ml-1">Tanggal</label>
+                           <CalendarPicker selectedDate={bookingDate} onSelectDate={setBookingDate} bookedDates={bookedDates} />
+                           {!bookingDate && (
+                              <div className="mt-2 flex items-start sm:items-center gap-1.5 text-[11px] font-medium text-amber-600 bg-amber-50/50 px-3 py-2.5 rounded-lg border border-amber-100">
+                                 <svg className="w-4 h-4 mt-0.5 sm:mt-0 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" /></svg>
+                                 Silakan pilih tanggal konseling di kalender.
+                              </div>
+                           )}
                         </div>
-                     </div>
-                     <div className="space-y-1">
-                        <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">Jam Pertemuan</label>
-                        <select 
-                           value={bookingTime} 
-                           onChange={(e) => setBookingTime(e.target.value)} 
-                           required 
-                           className="input-field"
-                        >
-                           <option value="" disabled>Pilih Jam Pertemuan</option>
-                           <option value="10:30">10:30 WIB</option>
-                           <option value="11:00">11:00 WIB</option>
-                           <option value="11:30">11:30 WIB</option>
-                           <option value="12:00">12:00 WIB</option>
-                           <option value="12:30">12:30 WIB</option>
-                           <option value="13:00">13:00 WIB</option>
-                           <option value="13:30">13:30 WIB</option>
-                           <option value="14:00">14:00 WIB</option>
-                           <option value="14:30">14:30 WIB</option>
-                           <option value="15:00">15:00 WIB</option>
-                        </select>
-                     </div>
-                     <div className="space-y-1">
-                        <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">Perihal / Topik Utama</label>
-                        <textarea value={topic} onChange={(e) => setTopic(e.target.value)} required className="input-field min-h-[100px]" placeholder="Jelaskan secara singkat apa yang ingin dikonsultasikan..." />
+                     <div className="space-y-1.5 mt-3 sm:mt-4">
+                        <label className="text-[10px] font-extrabold text-slate-400 uppercase tracking-widest ml-1">Perihal / Topik Utama</label>
+                        <textarea value={topic} onChange={(e) => setTopic(e.target.value)} required className="input-field min-h-[100px] text-slate-800 placeholder:text-slate-300 resize-none" placeholder="Ceritakan sedikit gambaran topik yang ingin dibahas..." />
                      </div>
                   </div>
 
-                  <button type="submit" disabled={isSubmitting} className="btn-primary w-full mt-8 py-4">
+                  <button type="submit" disabled={isSubmitting} className="btn-primary w-full mt-6 sm:mt-8 py-3.5 sm:py-4 shadow-emerald-200 shadow-lg">
                      {isSubmitting ? "Memproses..." : "Kirim Pengajuan Konseling"}
                   </button>
                 </>
