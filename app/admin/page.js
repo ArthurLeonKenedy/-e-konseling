@@ -99,7 +99,7 @@ export default function AdminDashboard() {
 
         {/* Dynamic Stats Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 mb-12 animate-slide-up">
-           <StatCardAdmin label="Total Siswa" value={stats.total_siswa} icon={<SiswaIcon />} color="text-indigo-600" bg="bg-indigo-50" />
+           <StatCardAdmin label="Total Siswa" value={stats.total_siswa} icon={<SiswaIcon />} color="text-teal-600" bg="bg-teal-50" />
            <StatCardAdmin label="Guru BK Aktif" value={stats.total_guru} icon={<GuruIcon />} color="text-emerald-600" bg="bg-emerald-50" />
            <StatCardAdmin label="Kasus Tercatat" value={stats.total_kasus} icon={<FileIcon />} color="text-amber-600" bg="bg-amber-50" />
            <StatCardAdmin label="Admin Panel" value={stats.total_admin} icon={<GridIcon />} color="text-slate-600" bg="bg-slate-50" />
@@ -119,7 +119,7 @@ export default function AdminDashboard() {
               desc="Kelola data pendaftaran siswa, NISN, dan validasi akun." 
               link="/admin/users?role=siswa"
               icon={<SiswaIcon />}
-              primaryColor="bg-indigo-600"
+              primaryColor="bg-teal-600"
            />
         </div>
 

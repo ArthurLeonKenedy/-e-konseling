@@ -125,6 +125,14 @@ function SiswaDashboardContent() {
     e.preventDefault();
     if (isSubmitting) return;
     const user = JSON.parse(localStorage.getItem('user'));
+    
+    // Validasi session tab-silang (berguna jika sedang testing 2 akun di browser yang sama)
+    if (!user || user.role !== 'siswa') {
+        alert("Sesi Anda telah berubah menjadi akun Guru/Admin di tab lain. Silakan gunakan Mode Penyamaran (Incognito) untuk menguji 2 akun sekaligus, atau login ulang sebagai Siswa.");
+        window.location.reload();
+        return;
+    }
+    
     setIsSubmitting(true);
     try {
       const res = await apiFetch(`/api/konselings`, {
@@ -256,27 +264,27 @@ function SiswaDashboardContent() {
         <NotificationBanner />
 
         {/* Top Header */}
-        <div className="dash-card p-1 overflow-hidden border-none bg-white/40 backdrop-blur-md mb-10 shadow-sm">
-          <div className="flex flex-col md:flex-row justify-between md:items-center gap-6 p-6">
+        <div style={{background: 'linear-gradient(135deg, #059669 0%, #047857 50%, #065f46 100%)', borderRadius: '12px', padding: '1px', marginBottom: '40px', boxShadow: '0 8px 32px rgba(5, 150, 105, 0.35)' }}>
+          <div className="flex flex-col md:flex-row justify-between md:items-center gap-6 p-6" style={{borderRadius: '11px'}}>
             <div className="flex items-center gap-6">
-              <div className="w-16 h-16 shadow-xl flex items-center justify-center p-0.5 rounded-2xl bg-gradient-to-br from-emerald-600 to-emerald-800 shrink-0">
-                 <div className="w-full h-full rounded-xl overflow-hidden bg-white flex items-center justify-center">
+              <div className="w-16 h-16 shadow-xl flex items-center justify-center p-0.5 rounded-xl shrink-0" style={{background: 'rgba(255,255,255,0.2)'}}>
+                 <div className="w-full h-full rounded-lg overflow-hidden flex items-center justify-center" style={{background: 'rgba(255,255,255,0.15)'}}>
                    {profile.preview ? (
                      <img src={profile.preview} className="w-full h-full object-cover" alt="Profile" />
                    ) : (
-                     <span className="text-2xl font-extrabold text-emerald-700">{namaSiswa.charAt(0)}</span>
+                     <span className="text-2xl font-extrabold text-white">{namaSiswa.charAt(0)}</span>
                    )}
                  </div>
               </div>
               <div>
-                <h2 className="text-2xl font-black text-slate-900 tracking-tight">
-                  Halo, {namaSiswa} <span className="text-slate-400 font-bold text-lg">({kelasSiswa})</span>
+                <h2 className="text-2xl font-black tracking-tight" style={{color: '#ffffff'}}>
+                  Halo, {namaSiswa} <span className="font-bold text-lg" style={{color: 'rgba(255,255,255,0.7)'}}>({kelasSiswa})</span>
                 </h2>
-                <p className="text-[11px] font-bold text-emerald-600 uppercase tracking-widest mt-1">Portal Layanan Bimbingan & Konseling</p>
+                <p className="text-[11px] font-bold uppercase tracking-widest mt-1" style={{color: 'rgba(255,255,255,0.8)'}}>Portal Layanan Bimbingan & Konseling</p>
               </div>
             </div>
-            <div className="flex items-center gap-3 px-5 py-2.5 rounded-2xl bg-white border border-emerald-100 shadow-sm text-xs font-extrabold text-emerald-700 w-fit">
-              <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
+            <div className="flex items-center gap-3 px-5 py-2.5 rounded-2xl text-xs font-extrabold w-fit" style={{background: 'rgba(255,255,255,0.15)', border: '1px solid rgba(255,255,255,0.25)', color: '#ffffff', backdropFilter: 'blur(8px)'}}>
+              <span className="w-2.5 h-2.5 rounded-full animate-pulse" style={{background: '#86efac', boxShadow: '0 0 8px rgba(134,239,172,0.8)'}} />
               SISTEM ONLINE
             </div>
           </div>
@@ -319,8 +327,8 @@ function SiswaDashboardContent() {
                       <tr>
                         <td colSpan="4" className="text-center py-12 text-slate-400 font-medium italic">Belum ada riwayat {dashboardTab === 'aktif' ? 'konseling aktif' : 'arsip konseling'}.</td>
                       </tr>
-                    ) : myBookings.filter(b => dashboardTab === 'aktif' ? !["Selesai", "Dibatalkan", "Ditolak"].includes(b.status) : ["Selesai", "Dibatalkan", "Ditolak"].includes(b.status)).map(b => (
-                      <tr key={b.id}>
+                    ) : myBookings.filter(b => dashboardTab === 'aktif' ? !["Selesai", "Dibatalkan", "Ditolak"].includes(b.status) : ["Selesai", "Dibatalkan", "Ditolak"].includes(b.status)).map((b, idx) => (
+                      <tr key={b.id ?? `booking-${idx}`}>
                         <td>
                           <p className="font-bold text-slate-900">{b.guruName}</p>
                           <p className="text-[10px] text-slate-400 truncate max-w-[200px]">{b.topic}</p>
@@ -370,8 +378,8 @@ function SiswaDashboardContent() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-              {schedules.map(s => (
-                <div key={s.id} className="dash-card flex flex-col items-center group relative overflow-hidden hover:-translate-y-1 hover:shadow-2xl hover:shadow-slate-200/50 transition-all duration-300 !p-6 border border-slate-100">
+              {schedules.map((s, index) => (
+                <div key={s.id ?? `schedule-${index}`} className="dash-card flex flex-col items-center group relative overflow-hidden hover:-translate-y-1 hover:shadow-2xl hover:shadow-slate-200/50 transition-all duration-300 !p-6 border border-slate-100">
                   <div className="relative mb-5 mt-2">
                     <div className="w-24 h-24 rounded-full bg-gradient-to-tr from-emerald-600 to-emerald-400 text-white flex items-center justify-center text-4xl font-extrabold shadow-xl shadow-emerald-200 group-hover:scale-105 transition-transform duration-300">
                       {s.name.charAt(0)}
@@ -490,7 +498,7 @@ function SiswaDashboardContent() {
                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                            <div className="space-y-1.5">
                               <label className="text-[10px] font-extrabold text-slate-400 uppercase tracking-widest ml-1">Kategori</label>
-                              <select value={category} onChange={(e) => setCategory(e.target.value)} required className={`input-field cursor-pointer transition-colors ${!category ? 'text-slate-400' : 'text-slate-800'}`}>
+                              <select value={category} onChange={(e) => setCategory(e.target.value)} required className={`input-field !bg-slate-50 !border-slate-200 focus:!bg-white cursor-pointer transition-colors ${!category ? '!text-slate-400' : '!text-slate-800'}`}>
                                  <option value="" disabled className="text-slate-400">Pilih Kategori</option>
                                  <option value="Akademik" className="text-slate-800">Akademik</option>
                                  <option value="Sosial" className="text-slate-800">Sosial</option>
@@ -504,7 +512,7 @@ function SiswaDashboardContent() {
                                  value={bookingTime} 
                                  onChange={(e) => setBookingTime(e.target.value)} 
                                  required 
-                                 className={`input-field cursor-pointer transition-colors ${!bookingTime ? 'text-slate-400' : 'text-slate-800'}`}
+                                 className={`input-field !bg-slate-50 !border-slate-200 focus:!bg-white cursor-pointer transition-colors ${!bookingTime ? '!text-slate-400' : '!text-slate-800'}`}
                               >
                                  <option value="" disabled className="text-slate-400">Pilih Jam Pertemuan</option>
                                  <option value="10:30" className="text-slate-800">10:30 WIB</option>
@@ -532,7 +540,7 @@ function SiswaDashboardContent() {
                         </div>
                      <div className="space-y-1.5 mt-3 sm:mt-4">
                         <label className="text-[10px] font-extrabold text-slate-400 uppercase tracking-widest ml-1">Perihal / Topik Utama</label>
-                        <textarea value={topic} onChange={(e) => setTopic(e.target.value)} required className="input-field min-h-[100px] text-slate-800 placeholder:text-slate-300 resize-none" placeholder="Ceritakan sedikit gambaran topik yang ingin dibahas..." />
+                        <textarea value={topic} onChange={(e) => setTopic(e.target.value)} required className="input-field !bg-slate-50 !border-slate-200 !text-slate-800 focus:!bg-white min-h-[100px] placeholder:text-slate-400 resize-none" placeholder="Ceritakan sedikit gambaran topik yang ingin dibahas..." />
                      </div>
                   </div>
 

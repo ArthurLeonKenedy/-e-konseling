@@ -108,13 +108,13 @@ export default function QueueTable({
                               )}
                             </Link>
                             <select 
-                               className="input-field !py-1 !px-2 !text-[10px] !w-32 !rounded-xl"
+                               className="input-field !py-1 !px-2 !text-[10px] !w-32 !rounded-xl !bg-slate-50 !text-slate-800 !border-slate-200 focus:!bg-white cursor-pointer"
                                value={item.status}
                                onChange={(e) => onUpdateStatus(item.id, e.target.value)}
                             >
-                               <option value="Terjadwal">Terjadwal</option>
-                               <option value="Sedang Konseling">Proses</option>
-                               <option value="Selesai">Selesai</option>
+                               <option value="Terjadwal" className="text-slate-800">Terjadwal</option>
+                               <option value="Sedang Konseling" className="text-slate-800">Proses</option>
+                               <option value="Selesai" className="text-slate-800">Selesai</option>
                             </select>
                           </>
                         ) : (

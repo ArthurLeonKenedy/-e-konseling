@@ -84,7 +84,7 @@ export default function ScheduleManagement() {
               value={schedule.hari} 
               onChange={(e) => setSchedule({...schedule, hari: e.target.value})} 
               required 
-              className="input-field" 
+              className="input-field !bg-slate-50 !border-slate-200 !text-slate-800 focus:!bg-white" 
               placeholder="Cth: Senin - Jumat" 
             />
           </div>
@@ -93,7 +93,7 @@ export default function ScheduleManagement() {
             <select 
               value={schedule.status} 
               onChange={(e) => setSchedule({...schedule, status: e.target.value})} 
-              className="input-field font-bold"
+              className="input-field !bg-slate-50 !border-slate-200 !text-slate-800 focus:!bg-white font-bold"
             >
               <option value="Tersedia">🟢 Tersedia (Menerima Chat & Booking)</option>
               <option value="Penuh">🟡 Penuh (Jadwal Padat)</option>
@@ -106,7 +106,7 @@ export default function ScheduleManagement() {
               value={schedule.jam_mulai} 
               onChange={(e) => setSchedule({...schedule, jam_mulai: e.target.value})} 
               required 
-              className="input-field"
+              className="input-field !bg-slate-50 !border-slate-200 !text-slate-800 focus:!bg-white"
             >
                <option value="" disabled>Pilih Jam Mulai</option>
                <option value="10:30">10:30 WIB</option>
@@ -127,7 +127,7 @@ export default function ScheduleManagement() {
               value={schedule.jam_selesai} 
               onChange={(e) => setSchedule({...schedule, jam_selesai: e.target.value})} 
               required 
-              className="input-field"
+              className="input-field !bg-slate-50 !border-slate-200 !text-slate-800 focus:!bg-white"
             >
                <option value="" disabled>Pilih Jam Selesai</option>
                <option value="10:30">10:30 WIB</option>
@@ -151,7 +151,7 @@ export default function ScheduleManagement() {
               value={schedule.kuota_harian} 
               onChange={(e) => setSchedule({...schedule, kuota_harian: parseInt(e.target.value) || 1})} 
               required 
-              className="input-field w-full md:w-1/2" 
+              className="input-field !bg-slate-50 !border-slate-200 !text-slate-800 focus:!bg-white w-full md:w-1/2" 
             />
             <p className="text-[10px] text-slate-500 mt-1 ml-1">Sistem akan otomatis menolak pendaftaran baru jika jumlah konseling di suatu hari sudah mencapai batas ini.</p>
           </div>

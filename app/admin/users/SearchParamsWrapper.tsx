@@ -101,63 +101,70 @@ export default function SearchParamsWrapper() {
   };
 
   return (
-    <div className="min-h-screen mesh-bg font-sans">
+    <div className="min-h-screen bg-slate-50 font-sans text-slate-900">
       <div className="max-w-7xl mx-auto px-6 py-12">
-        <header className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 mb-12">
-          <div>
-            <button onClick={() => router.push('/admin')} className="flex items-center gap-2 text-slate-400 hover:text-slate-900 font-bold text-xs uppercase tracking-widest mb-4 transition-colors">
-               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M15 19l-7-7 7-7" /></svg>
-               Kembali ke Dashboard
+        <div className="bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-600 text-white rounded-2xl p-6 shadow-md mb-8 flex flex-col md:flex-row justify-between md:items-center gap-4">
+          <div className="flex items-center gap-4">
+            <button 
+              onClick={() => router.push('/admin')} 
+              className="flex items-center justify-center w-10 h-10 bg-white/10 hover:bg-white/20 active:scale-95 text-white rounded-xl transition-all border border-white/15 shadow-sm"
+              title="Kembali ke Dashboard"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+              </svg>
             </button>
-            <h1 className="text-3xl font-extrabold text-slate-900 tracking-tight">
-              Kelola {roleFilter === 'guru' ? 'Guru BK' : 'Siswa'}
-            </h1>
-            <p className="text-slate-500 font-medium mt-1">Daftar pengguna terdaftar di sistem</p>
+            <div className="h-8 w-px bg-white/20 hidden md:block"></div>
+            <div>
+              <h1 className="text-xl font-bold tracking-tight text-white">Kelola {roleFilter === 'guru' ? 'Guru BK' : 'Siswa'}</h1>
+              <p className="text-xs text-emerald-100/80 font-medium mt-0.5">Manajemen Pengguna Terdaftar</p>
+            </div>
           </div>
+          
           <button 
             onClick={() => { setEditingUser(null); setFormData({ name: "", password: "", role: roleFilter, kelas: "", nisn: "", nip: "" }); setShowModal(true); }}
-            className="flex items-center gap-2 px-6 py-3 bg-emerald-700 text-white rounded-2xl font-bold text-sm shadow-xl shadow-emerald-100 hover:scale-[1.02] active:scale-[0.98] transition-all"
+            className="flex items-center gap-2 px-5 py-2.5 bg-white text-emerald-700 hover:bg-emerald-50 active:scale-95 rounded-xl text-xs font-bold transition-all shadow-sm self-start md:self-auto"
           >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M12 6v6m0 0v6m0-6h6m-6 0H6" /></svg>
-            Tambah {roleFilter === 'guru' ? 'Guru' : 'Siswa'}
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6" /></svg>
+            TAMBAH DATA
           </button>
-        </header>
+        </div>
 
         {/* Table/Content */}
-        <div className="dash-card overflow-hidden">
-          <div className="dash-table-container">
-            <table className="dash-table">
-              <thead>
+        <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+          <div className="overflow-x-auto">
+            <table className="w-full text-left text-sm text-slate-600">
+              <thead className="bg-slate-50 border-b border-slate-200 text-slate-500 text-xs uppercase tracking-wider">
                 <tr>
-                  <th>Nama Lengkap</th>
-                  {roleFilter === 'siswa' && <th>Kelas</th>}
-                  {roleFilter === 'siswa' && <th>NISN</th>}
-                  {roleFilter === 'guru' && <th>NIP / Kode Unik</th>}
-                  <th className="text-center">Aksi</th>
+                  <th className="pl-8 pr-6 py-5 font-extrabold text-[11px]">Nama Lengkap</th>
+                  {roleFilter === 'siswa' && <th className="px-6 py-5 font-extrabold text-[11px]">Kelas</th>}
+                  {roleFilter === 'siswa' && <th className="px-6 py-5 font-extrabold text-[11px]">NISN</th>}
+                  {roleFilter === 'guru' && <th className="px-6 py-5 font-extrabold text-[11px]">NIP / Kode Unik</th>}
+                  <th className="px-6 py-5 font-extrabold text-[11px] text-center">Aksi</th>
                 </tr>
               </thead>
               <tbody>
                 {isLoading ? (
                   <tr>
-                    <td colSpan={4} className="px-6 py-12 text-center text-slate-400 font-medium">Memuat data...</td>
+                    <td colSpan={4} className="px-6 py-12 text-center text-slate-500 font-medium">Memuat data...</td>
                   </tr>
                 ) : users.length === 0 ? (
                   <tr>
                     <td colSpan={4} className="px-6 py-12 text-center text-slate-400 font-medium">Belum ada data {roleFilter}.</td>
                   </tr>
                 ) : users.map((u) => (
-                  <tr key={u.id}>
-                    <td className="px-6 py-5">
-                      <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center font-bold text-slate-400 text-xs uppercase">
+                  <tr key={u.id} className="border-b border-slate-100 hover:bg-emerald-50/50 transition-colors">
+                    <td className="pl-8 pr-6 py-6">
+                      <div className="flex items-center gap-5">
+                        <div className="w-12 h-12 shrink-0 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center font-bold text-white text-[15px] uppercase shadow-md shadow-emerald-200/50 ring-2 ring-white">
                           {u.name.substring(0, 2)}
                         </div>
-                        <span className="font-bold text-slate-900">{u.name}</span>
+                        <span className="font-extrabold text-slate-900 text-base whitespace-nowrap">{u.name}</span>
                       </div>
                     </td>
-                    {roleFilter === 'siswa' && <td className="px-6 py-5 text-slate-500 font-medium">{u.kelas}</td>}
-                    {roleFilter === 'siswa' && <td className="px-6 py-5 text-slate-500 font-medium">{u.nisn}</td>}
-                    {roleFilter === 'guru' && <td className="px-6 py-5 text-slate-500 font-medium">{u.nip}</td>}
+                    {roleFilter === 'siswa' && <td className="px-6 py-5 text-slate-600 font-medium">{u.kelas}</td>}
+                    {roleFilter === 'siswa' && <td className="px-6 py-5 text-slate-600 font-medium">{u.nisn}</td>}
+                    {roleFilter === 'guru' && <td className="px-6 py-5 text-slate-600 font-medium">{u.nip}</td>}
                     <td className="px-6 py-5">
                       <div className="flex items-center justify-center gap-2">
                         <button onClick={() => handleEdit(u)} className="p-2 text-emerald-600 hover:bg-emerald-50 rounded-lg transition-colors">

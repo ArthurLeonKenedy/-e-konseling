@@ -109,7 +109,7 @@ export default function LoginPage() {
 
 
         <div className="left-foot">
-            © {new Date().getFullYear()} SMK Negeri 1 Pontianak. All rights reserved.
+            © {new Date().getFullYear()} SMK Negeri 1 Pontianak. All rights reserved. | BINA SARANA INFORMATIKA
         </div>
       </div>
 
