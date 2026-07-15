@@ -10,7 +10,7 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html, body { min-height: 100%; font-family: var(--font-sans); -webkit-font-smoothing: antialiased; }
+html, body { min-height: 100%; font-family: var(--font-sans); -webkit-font-smoothing: antialiased; background-color: #020617; }
 
 /* ══════════════════════════════════
     ANIMATIONS
@@ -41,12 +41,13 @@ html, body { min-height: 100%; font-family: var(--font-sans); -webkit-font-smoot
     min-height: 100vh;
     background: linear-gradient(135deg, #064e3b 0%, #022c22 40%, #020617 100%);
     position: relative;
-    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 @media (min-width: 1024px) {
     .page {
         flex-direction: row;
+        overflow: hidden;
     }
 }
 
