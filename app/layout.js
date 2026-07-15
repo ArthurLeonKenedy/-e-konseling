@@ -20,8 +20,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="id" className={`${outfit.variable} ${plusJakartaSans.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col font-sans">
+    <html lang="id" className={`${outfit.variable} ${plusJakartaSans.variable} antialiased`}>
+      <body className="font-sans">
         <AuthProvider>
           <Toaster position="top-right" />
           {children}
