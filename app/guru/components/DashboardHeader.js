@@ -8,7 +8,7 @@ export default function DashboardHeader({ namaGuru, user, onUpdateUser }) {
       <div style={{background: 'linear-gradient(135deg, #059669 0%, #047857 50%, #065f46 100%)', borderRadius: '12px', padding: '1px', boxShadow: '0 8px 32px rgba(5, 150, 105, 0.35)'}}>
         <div className="flex flex-col md:flex-row justify-between md:items-center gap-6 p-6" style={{borderRadius: '11px'}}>
           <div className="flex items-center gap-6">
-            <div className="w-16 h-16 shadow-xl flex items-center justify-center p-0.5 rounded-xl" style={{background: 'rgba(255,255,255,0.2)'}}>
+            <div className="w-16 h-16 flex items-center justify-center p-0.5 rounded-xl border border-white/20 bg-white/5">
               <AvatarUpload user={user} onUploadSuccess={onUpdateUser} size="w-full h-full" rounded="rounded-lg" />
             </div>
             <div>

@@ -69,7 +69,7 @@ export default function LaporanManagement({
         </div>
         <button 
           onClick={() => setShowLaporanForm(!showLaporanForm)}
-          className={`flex items-center gap-3 px-6 py-3 rounded-2xl text-xs font-black uppercase tracking-widest shadow-xl transition-all active:scale-95 ${showLaporanForm ? 'bg-slate-200 text-slate-700' : 'bg-emerald-600 text-white shadow-emerald-100'}`}
+          className={`flex items-center gap-3 px-6 py-3 rounded-2xl text-xs font-black uppercase tracking-widest shadow-xl transition-all active:scale-95 border ${showLaporanForm ? 'bg-slate-800 text-slate-200 border-slate-700' : 'bg-emerald-600 text-white border-emerald-500/20 shadow-lg shadow-emerald-950/50'}`}
         >
           {showLaporanForm ? 'Batal / Tutup Form' : 'Terbitkan Laporan Baru'}
         </button>
@@ -147,12 +147,14 @@ export default function LaporanManagement({
 
       {/* Filter & List */}
       <div className="space-y-6">
-        <div className="flex gap-2 p-1 bg-slate-100 rounded-2xl w-fit">
+        <div className="flex gap-2 p-1 bg-slate-900/40 border border-slate-800/60 rounded-2xl w-fit">
           {['semua', 'Dalam Proses', 'Ditangani', 'Selesai'].map(f => (
             <button 
               key={f} onClick={() => setLaporanStatusFilter(f)}
               className={`px-6 py-2.5 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all ${
-                laporanStatusFilter === f ? 'bg-white text-slate-900 shadow-sm' : 'text-slate-400 hover:text-slate-600'
+                laporanStatusFilter === f 
+                  ? 'bg-emerald-600 text-white shadow-lg shadow-emerald-950/50' 
+                  : 'text-slate-400 hover:text-slate-200'
               }`}
             >{f}</button>
           ))}
@@ -176,11 +178,11 @@ export default function LaporanManagement({
                   filteredLaporan.map(lap => (
                     <tr key={lap.id} className="group">
                       <td>
-                        <p className="font-bold text-slate-900 leading-tight">{lap.judul}</p>
-                        <p className="text-[10px] font-black text-emerald-600 uppercase tracking-widest mt-1">{lap.kategori}</p>
+                        <p className="font-bold text-slate-100 leading-tight">{lap.judul}</p>
+                        <p className="text-[10px] font-black text-emerald-400 uppercase tracking-widest mt-1">{lap.kategori}</p>
                       </td>
                       <td>
-                        <p className="font-bold text-slate-700">{lap.siswa?.name || 'Siswa'}</p>
+                        <p className="font-bold text-slate-200">{lap.siswa?.name || 'Siswa'}</p>
                         <p className="text-[10px] text-slate-400 uppercase tracking-widest">{lap.siswa?.kelas || '-'}</p>
                       </td>
                       <td>
@@ -191,7 +193,7 @@ export default function LaporanManagement({
                           <button
                             onClick={() => handleDownloadPDF(lap)}
                             disabled={downloadingId === lap.id}
-                            className="w-9 h-9 flex items-center justify-center rounded-xl bg-slate-50 text-slate-400 hover:text-red-500 transition-all border border-slate-100 disabled:opacity-50 disabled:cursor-not-allowed" 
+                            className="w-9 h-9 flex items-center justify-center rounded-xl bg-slate-800/40 text-slate-400 hover:text-red-500 transition-all border border-slate-700/40 disabled:opacity-50 disabled:cursor-not-allowed" 
                             title={downloadingId === lap.id ? 'Sedang mengunduh...' : 'Unduh PDF'}
                           >
                             {downloadingId === lap.id ? (
@@ -200,8 +202,8 @@ export default function LaporanManagement({
                               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
                             )}
                           </button>
-                          <button onClick={() => onEditStatus(lap)} className="w-9 h-9 flex items-center justify-center rounded-xl bg-slate-50 text-slate-400 hover:text-emerald-600 transition-all border border-slate-100"><svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" /></svg></button>
-                          <button onClick={() => onDeleteLaporan(lap.id)} className="w-9 h-9 flex items-center justify-center rounded-xl bg-slate-50 text-slate-400 hover:text-red-400 transition-all border border-slate-100"><svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg></button>
+                          <button onClick={() => onEditStatus(lap)} className="w-9 h-9 flex items-center justify-center rounded-xl bg-slate-800/40 text-slate-400 hover:text-emerald-400 transition-all border border-slate-700/40"><svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" /></svg></button>
+                          <button onClick={() => onDeleteLaporan(lap.id)} className="w-9 h-9 flex items-center justify-center rounded-xl bg-slate-800/40 text-slate-400 hover:text-red-400 transition-all border border-slate-700/40"><svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg></button>
                         </div>
                       </td>
                     </tr>

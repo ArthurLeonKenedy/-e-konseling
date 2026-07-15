@@ -267,8 +267,8 @@ function SiswaDashboardContent() {
         <div style={{background: 'linear-gradient(135deg, #059669 0%, #047857 50%, #065f46 100%)', borderRadius: '12px', padding: '1px', marginBottom: '40px', boxShadow: '0 8px 32px rgba(5, 150, 105, 0.35)' }}>
           <div className="flex flex-col md:flex-row justify-between md:items-center gap-6 p-6" style={{borderRadius: '11px'}}>
             <div className="flex items-center gap-6">
-              <div className="w-16 h-16 shadow-xl flex items-center justify-center p-0.5 rounded-xl shrink-0" style={{background: 'rgba(255,255,255,0.2)'}}>
-                 <div className="w-full h-full rounded-lg overflow-hidden flex items-center justify-center" style={{background: 'rgba(255,255,255,0.15)'}}>
+              <div className="w-16 h-16 flex items-center justify-center p-0.5 rounded-xl shrink-0 border border-white/20 bg-white/5">
+                 <div className="w-full h-full rounded-lg overflow-hidden flex items-center justify-center" style={{background: 'rgba(255,255,255,0.1)'}}>
                    {profile.preview ? (
                      <img src={profile.preview} className="w-full h-full object-cover" alt="Profile" />
                    ) : (
@@ -306,9 +306,9 @@ function SiswaDashboardContent() {
                   <span className="w-8 h-8 rounded-lg bg-emerald-100 flex items-center justify-center text-emerald-600">📅</span>
                   Jadwal Konseling Saya
                 </h3>
-                <div className="flex bg-slate-100 p-1 rounded-lg w-full sm:w-auto">
-                  <button onClick={() => setDashboardTab('aktif')} className={`flex-1 sm:flex-none px-4 py-1.5 text-xs font-bold rounded-md transition-colors ${dashboardTab === 'aktif' ? 'bg-white text-emerald-600 shadow-sm' : 'text-slate-500 hover:text-slate-700'}`}>Konseling Aktif</button>
-                  <button onClick={() => setDashboardTab('riwayat')} className={`flex-1 sm:flex-none px-4 py-1.5 text-xs font-bold rounded-md transition-colors ${dashboardTab === 'riwayat' ? 'bg-white text-emerald-600 shadow-sm' : 'text-slate-500 hover:text-slate-700'}`}>Riwayat</button>
+                <div className="flex bg-slate-900/40 border border-slate-800/60 p-1 rounded-lg w-full sm:w-auto">
+                  <button onClick={() => setDashboardTab('aktif')} className={`flex-1 sm:flex-none px-4 py-1.5 text-xs font-bold rounded-md transition-all ${dashboardTab === 'aktif' ? 'bg-emerald-600 text-white shadow-md shadow-emerald-950/50' : 'text-slate-400 hover:text-slate-200'}`}>Konseling Aktif</button>
+                  <button onClick={() => setDashboardTab('riwayat')} className={`flex-1 sm:flex-none px-4 py-1.5 text-xs font-bold rounded-md transition-all ${dashboardTab === 'riwayat' ? 'bg-emerald-600 text-white shadow-md shadow-emerald-950/50' : 'text-slate-400 hover:text-slate-200'}`}>Riwayat</button>
                 </div>
               </div>
 
@@ -379,48 +379,50 @@ function SiswaDashboardContent() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
               {schedules.map((s, index) => (
-                <div key={s.id ?? `schedule-${index}`} className="dash-card flex flex-col items-center group relative overflow-hidden hover:-translate-y-1 hover:shadow-2xl hover:shadow-slate-200/50 transition-all duration-300 !p-6 border border-slate-100">
+                <div key={s.id ?? `schedule-${index}`} className="dash-card flex flex-col items-center group relative overflow-hidden hover:-translate-y-1 hover:shadow-2xl hover:shadow-emerald-500/10 transition-all duration-300 !p-6 border border-slate-800/60 bg-slate-900/40 backdrop-blur-md">
                   <div className="relative mb-5 mt-2">
-                    <div className="w-24 h-24 rounded-full bg-gradient-to-tr from-emerald-600 to-emerald-400 text-white flex items-center justify-center text-4xl font-extrabold shadow-xl shadow-emerald-200 group-hover:scale-105 transition-transform duration-300">
+                    <div className="w-24 h-24 rounded-full bg-gradient-to-tr from-emerald-600 to-emerald-400 text-white flex items-center justify-center text-4xl font-extrabold group-hover:scale-105 transition-transform duration-300 shadow-lg shadow-emerald-500/20">
                       {s.name.charAt(0)}
                     </div>
-                    <div className={`absolute bottom-1 right-1 w-6 h-6 rounded-full border-4 border-white shadow-sm ${s.status === 'Tersedia' ? 'bg-emerald-500' : 'bg-slate-300'}`}></div>
+                    <div className={`absolute bottom-1 right-1 w-6 h-6 rounded-full border-4 border-slate-900 shadow-sm ${s.status === 'Tersedia' ? 'bg-emerald-500' : 'bg-slate-500'}`}></div>
                   </div>
                   
                   <div className="w-full text-center mb-5">
-                    <h4 className="font-extrabold text-slate-900 text-xl truncate px-2">{s.name}</h4>
-                    <p className="text-[10px] font-bold text-emerald-600 uppercase tracking-widest mt-1">Guru Bimbingan Konseling</p>
+                    <h4 className="font-extrabold text-slate-100 text-xl truncate px-2">{s.name}</h4>
+                    <p className="text-[10px] font-bold text-emerald-400 uppercase tracking-widest mt-1">Guru Bimbingan Konseling</p>
                   </div>
                   
-                  <div className="w-full flex flex-col gap-3 mb-6 text-xs border-t border-slate-100 pt-5">
+                  <div className="w-full flex flex-col gap-3 mb-6 text-xs border-t border-slate-800/60 pt-5">
                      <div className="flex items-center justify-between">
                         <span className="text-slate-400 font-medium">Hari Tersedia</span>
-                        <span className="text-slate-700 font-bold text-right">{s.hari || '-'}</span>
+                        <span className="text-slate-200 font-semibold text-right">{s.hari || '-'}</span>
                      </div>
                      <div className="flex items-center justify-between">
                         <span className="text-slate-400 font-medium">Jam Kerja</span>
-                        <span className="text-slate-700 font-bold text-right">{s.jamMulai || '-'} - {s.jamSelesai || '-'}</span>
+                        <span className="text-slate-200 font-semibold text-right">{s.jamMulai || '-'} - {s.jamSelesai || '-'}</span>
                      </div>
-                     <div className="flex items-center justify-between">
-                        <span className="text-slate-400 font-medium">Status</span>
-                        <span className={`px-2.5 py-1 rounded-md text-[10px] font-black tracking-widest uppercase ${s.status === 'Tersedia' ? 'bg-emerald-50 text-emerald-600' : s.status === 'Sedang Cuti' ? 'bg-red-50 text-red-600' : 'bg-amber-50 text-amber-600'}`}>{s.status}</span>
-                     </div>
+                     {s.status !== 'Tersedia' && (
+                       <div className="flex items-center justify-between">
+                          <span className="text-slate-400 font-medium">Status</span>
+                          <span className={`px-2.5 py-1 rounded-md text-[10px] font-black tracking-widest uppercase ${s.status === 'Sedang Cuti' ? 'bg-red-950/40 text-red-400 border border-red-900/30' : 'bg-amber-950/40 text-amber-400 border border-amber-900/30'}`}>{s.status}</span>
+                       </div>
+                     )}
                   </div>
                   
                   <div className="w-full flex gap-3 mt-auto">
                     <Link 
                       href={`/chat?targetId=${s.guruId}&targetName=${encodeURIComponent(s.name)}&targetRole=guru`}
-                      className="flex-1 py-3 rounded-xl bg-slate-50 text-slate-600 font-bold text-xs hover:bg-emerald-50 hover:text-emerald-600 transition-colors flex items-center justify-center gap-2 relative border border-slate-100"
+                      className="flex-1 py-3 rounded-xl bg-slate-800/40 text-slate-300 font-bold text-xs hover:bg-emerald-500/10 hover:text-emerald-400 transition-all duration-200 flex items-center justify-center gap-2 relative border border-slate-700/40"
                     >
                       Chat 💬
                       {unreadCounts[s.guruId] > 0 && (
-                        <span className="absolute -top-2 -right-2 bg-red-500 text-white text-[9px] px-2 py-0.5 rounded-full border-2 border-white">{unreadCounts[s.guruId]}</span>
+                        <span className="absolute -top-2 -right-2 bg-red-500 text-white text-[9px] px-2 py-0.5 rounded-full border-2 border-slate-900">{unreadCounts[s.guruId]}</span>
                       )}
                     </Link>
                     <button 
                       onClick={() => setSelectedSchedule(s)}
                       disabled={s.status !== 'Tersedia'}
-                      className="flex-[2] btn-primary py-3 text-xs disabled:opacity-50 disabled:grayscale disabled:cursor-not-allowed shadow-lg shadow-emerald-100"
+                      className="flex-[2] btn-primary py-3 text-xs disabled:opacity-50 disabled:grayscale disabled:cursor-not-allowed shadow-lg shadow-emerald-950/50"
                     >
                        Booking 📅
                     </button>
@@ -471,8 +473,8 @@ function SiswaDashboardContent() {
 
       {/* Booking Modal */}
       {selectedSchedule && (
-         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 bg-slate-900/60 backdrop-blur-sm">
-            <form onSubmit={handleBookingSubmit} className="dash-card w-full max-w-lg animate-scaleIn shadow-2xl relative max-h-[95vh] overflow-y-auto overflow-x-hidden">
+         <div className="fixed inset-0 z-[100] overflow-y-auto bg-slate-900/60 backdrop-blur-sm flex justify-center items-start p-4 sm:p-6">
+            <form onSubmit={handleBookingSubmit} className="dash-card !bg-white w-full max-w-lg animate-scaleIn shadow-2xl relative my-4 sm:my-8 !overflow-visible">
               {isSuccess ? (
                 <div className="py-12 text-center space-y-4">
                    <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto text-3xl">✓</div>
