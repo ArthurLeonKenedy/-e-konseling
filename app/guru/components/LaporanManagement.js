@@ -69,7 +69,8 @@ export default function LaporanManagement({
         </div>
         <button 
           onClick={() => setShowLaporanForm(!showLaporanForm)}
-          className={`flex items-center gap-3 px-6 py-3 rounded-md text-xs font-black uppercase tracking-widest shadow-xl transition-all active:scale-95 border ${showLaporanForm ? 'bg-slate-800 text-slate-200 border-slate-700' : 'bg-emerald-600 text-white border-emerald-500/20 shadow-lg shadow-emerald-950/50'}`}
+          style={{ borderRadius: '6px' }}
+          className={`flex items-center gap-3 px-6 py-3 text-xs font-black uppercase tracking-widest shadow-xl transition-all active:scale-95 border ${showLaporanForm ? 'bg-slate-800 text-slate-200 border-slate-700' : 'bg-emerald-600 text-white border-emerald-500/20 shadow-lg shadow-emerald-950/50'}`}
         >
           {showLaporanForm ? 'Batal / Tutup Form' : 'Terbitkan Laporan Baru'}
         </button>
@@ -147,11 +148,12 @@ export default function LaporanManagement({
 
       {/* Filter & List */}
       <div className="space-y-6">
-        <div className="flex gap-2 p-1 bg-slate-900/40 border border-slate-800/60 rounded-lg w-fit">
+        <div className="flex gap-2 p-1 bg-slate-900/40 border border-slate-800/60 w-fit" style={{ borderRadius: '8px' }}>
           {['semua', 'Dalam Proses', 'Ditangani', 'Selesai'].map(f => (
             <button 
               key={f} onClick={() => setLaporanStatusFilter(f)}
-              className={`px-6 py-2.5 rounded-md text-[10px] font-black uppercase tracking-widest transition-all ${
+              style={{ borderRadius: '6px' }}
+              className={`px-6 py-2.5 text-[10px] font-black uppercase tracking-widest transition-all ${
                 laporanStatusFilter === f 
                   ? 'bg-emerald-600 text-white shadow-lg shadow-emerald-950/50' 
                   : 'text-slate-400 hover:text-slate-200'
