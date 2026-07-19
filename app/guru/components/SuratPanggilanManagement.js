@@ -139,7 +139,7 @@ export default function SuratPanggilanManagement() {
         </div>
         <button
           onClick={handleOpenModal}
-          className="flex items-center gap-3 px-6 py-3 rounded-2xl text-xs font-black uppercase tracking-widest bg-emerald-600 text-white border border-emerald-500/20 shadow-lg shadow-emerald-950/50 hover:bg-emerald-700 transition-all active:scale-95 cursor-pointer"
+          className="flex items-center gap-3 px-6 py-3 rounded-lg text-xs font-black uppercase tracking-widest bg-emerald-600 text-white border border-emerald-500/20 shadow-lg shadow-emerald-950/50 hover:bg-emerald-700 transition-all active:scale-95 cursor-pointer"
         >
           Buat Panggilan Baru ✉️
         </button>
