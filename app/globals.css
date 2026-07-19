@@ -929,6 +929,11 @@ select.input-field {
     padding-right: 40px;
 }
 
+select.input-field option {
+    color: #0f172a !important;
+    background-color: #ffffff !important;
+}
+
 /* ══════════════════════════════════
     GLOWING ACCENT ELEMENTS
 ══════════════════════════════════ */
