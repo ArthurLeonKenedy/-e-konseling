@@ -330,7 +330,7 @@ function SiswaDashboardContent() {
                   <span className="w-8 h-8 rounded-lg bg-emerald-100 flex items-center justify-center text-emerald-600">📅</span>
                   Jadwal Konseling Saya
                 </h3>
-                <div className="flex bg-slate-900/40 border border-slate-800/60 p-1 rounded-lg w-full sm:w-auto">
+                <div className="flex gap-2 bg-slate-900/40 border border-slate-800/60 p-1 rounded-lg w-full sm:w-auto">
                   <button onClick={() => setDashboardTab('aktif')} className={`flex-1 sm:flex-none px-4 py-1.5 text-xs font-bold rounded-md transition-all ${dashboardTab === 'aktif' ? 'bg-emerald-600 text-white shadow-md shadow-emerald-950/50' : 'text-slate-400 hover:text-slate-200'}`}>Konseling Aktif</button>
                   <button onClick={() => setDashboardTab('riwayat')} className={`flex-1 sm:flex-none px-4 py-1.5 text-xs font-bold rounded-md transition-all ${dashboardTab === 'riwayat' ? 'bg-emerald-600 text-white shadow-md shadow-emerald-950/50' : 'text-slate-400 hover:text-slate-200'}`}>Riwayat</button>
                 </div>
