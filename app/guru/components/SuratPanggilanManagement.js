@@ -230,8 +230,8 @@ export default function SuratPanggilanManagement() {
 
       {/* Modal Form */}
       {showModal && (
-        <div className="fixed inset-0 z-[100] bg-slate-900/60 backdrop-blur-sm flex justify-center items-center p-4">
-          <div className="dash-card w-full max-w-lg animate-scaleIn shadow-2xl relative bg-slate-900 border border-slate-800 p-8">
+        <div className="fixed inset-0 z-[100] overflow-y-auto bg-slate-900/60 backdrop-blur-sm flex justify-center items-start p-4 sm:p-6">
+          <div className="dash-card w-full max-w-lg animate-scaleIn shadow-2xl relative bg-slate-900 border border-slate-800 p-8 my-4 sm:my-8">
             <div className="flex justify-between items-center pb-4 border-b border-slate-800 mb-6">
               <h4 className="text-lg font-bold text-white">Buat Panggilan Siswa Baru</h4>
               <button
