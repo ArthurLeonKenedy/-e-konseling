@@ -1,10 +1,13 @@
 "use client";
-import { Suspense, useState, useEffect, useMemo } from "react";
+import { Suspense, useState, useEffect, useMemo, useRef } from "react";
 import { useAuthGuard } from "../hooks/useAuthGuard";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, AreaChart, Area } from 'recharts';
 import { apiFetch } from "../../lib/apiFetch";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import PWAInstallPrompt from "../components/PWAInstallPrompt";
+import AnalyticsPanel from "./components/AnalyticsPanel";
+import toast from "react-hot-toast";
 
 // Sub-components (redefined for premium style)
 import Sidebar from "./components/Sidebar";
@@ -14,6 +17,43 @@ import LaporanManagement from "./components/LaporanManagement";
 import UpdateStatusForm from "./components/UpdateStatusForm";
 import InboxManagement from "./components/InboxManagement";
 import ScheduleManagement from "./components/ScheduleManagement";
+import SuratPanggilanManagement from "./components/SuratPanggilanManagement";
+
+const playNotificationSound = () => {
+  try {
+    const AudioContext = window.AudioContext || window.webkitAudioContext;
+    if (!AudioContext) return;
+    const ctx = new AudioContext();
+    
+    const osc1 = ctx.createOscillator();
+    const gain1 = ctx.createGain();
+    osc1.connect(gain1);
+    gain1.connect(ctx.destination);
+    
+    osc1.type = 'sine';
+    osc1.frequency.setValueAtTime(880, ctx.currentTime);
+    gain1.gain.setValueAtTime(0.1, ctx.currentTime);
+    gain1.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.4);
+    
+    osc1.start(ctx.currentTime);
+    osc1.stop(ctx.currentTime + 0.4);
+    
+    const osc2 = ctx.createOscillator();
+    const gain2 = ctx.createGain();
+    osc2.connect(gain2);
+    gain2.connect(ctx.destination);
+    
+    osc2.type = 'sine';
+    osc2.frequency.setValueAtTime(659.25, ctx.currentTime + 0.12);
+    gain2.gain.setValueAtTime(0.1, ctx.currentTime + 0.12);
+    gain2.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.5);
+    
+    osc2.start(ctx.currentTime + 0.12);
+    osc2.stop(ctx.currentTime + 0.5);
+  } catch (e) {
+    console.warn("Audio Context playback failed or blocked.", e);
+  }
+};
 
 function GuruDashboardContent() {
   const { isAuthorized, isChecking } = useAuthGuard("guru");
@@ -30,6 +70,7 @@ function GuruDashboardContent() {
   const [historyQueue, setHistoryQueue] = useState([]);
   const [unreadCounts, setUnreadCounts] = useState({});
   const [allKonseling, setAllKonseling] = useState([]);
+  const [allKonselingStats, setAllKonselingStats] = useState([]);
   const [allStudents, setAllStudents] = useState([]);
   const [allLaporan, setAllLaporan] = useState([]);
   const [totalUnread, setTotalUnread] = useState(0);
@@ -46,6 +87,7 @@ function GuruDashboardContent() {
   });
 
   const [isLoading, setIsLoading] = useState({ students: false, laporan: false, submitting: false });
+  const prevRequestsRef = useRef([]);
 
   // Initial Data Load
   useEffect(() => {
@@ -66,15 +108,30 @@ function GuruDashboardContent() {
       setNamaGuru(parsedUser.name);
       setUser(parsedUser);
 
-      const [konsRes, unreadRes] = await Promise.all([
+      const [konsRes, unreadRes, statsRes] = await Promise.all([
         apiFetch(`/api/konselings?guru_id=${parsedUser.id}`),
-        apiFetch(`/api/chats/unread`)
+        apiFetch(`/api/chats/unread`),
+        apiFetch(`/api/konselings`)
       ]);
 
       const konsData = await konsRes.json();
       if (konsData.success) {
         setAllKonseling(konsData.data);
         const pending = konsData.data.filter(k => k.status === 'Menunggu Konfirmasi').map(mapToFrontendFormat);
+        
+        // Detect new incoming requests in real-time
+        if (prevRequestsRef.current.length > 0 && pending.length > prevRequestsRef.current.length) {
+          const prevIds = prevRequestsRef.current.map(r => r.id);
+          const newItems = pending.filter(r => !prevIds.includes(r.id));
+          if (newItems.length > 0) {
+            newItems.forEach(item => {
+              toast.success(`Pengajuan Konseling Baru dari ${item.studentName}: ${item.topic}`, { duration: 6000 });
+            });
+            playNotificationSound();
+          }
+        }
+        prevRequestsRef.current = pending;
+
         const activeStatuses = ['Terjadwal', 'Sedang Konseling', 'Usulan Reschedule'];
         const historyStatuses = ['Selesai', 'Dibatalkan', 'Ditolak'];
         const accepted = konsData.data.filter(k => activeStatuses.includes(k.status)).map(mapToFrontendFormat);
@@ -94,6 +151,11 @@ function GuruDashboardContent() {
         });
         setUnreadCounts(counts);
         setTotalUnread(sum);
+      }
+
+      const statsData = await statsRes.json();
+      if (statsData.success) {
+        setAllKonselingStats(statsData.data);
       }
     } catch (e) { console.error(e); }
   };
@@ -305,58 +367,12 @@ function GuruDashboardContent() {
             />
           )}
 
+          {activeTab === 'surat-panggilan' && (
+            <SuratPanggilanManagement />
+          )}
+
           {activeTab === 'analitik' && (
-            <div className="space-y-8">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <StatCardGuru label="Pendampingan Aktif" value={acceptedQueue.filter(k => k.status === 'Terjadwal').length} color="text-emerald-600" />
-                <StatCardGuru label="Selesai Pekan Ini" value={allKonseling.filter(k => k.status === 'Selesai').length} color="text-blue-600" />
-                <StatCardGuru label="Kasus Perlu Tindakan" value={allLaporan.filter(l => l.status === 'Pending').length} color="text-rose-600" />
-              </div>
-
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <section className="dash-card group">
-                   <h4 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-8 flex items-center gap-2">
-                      <span className="w-1 h-3 bg-emerald-500 rounded-full"></span>
-                      Distribusi Masalah Siswa
-                   </h4>
-                   <div className="h-[300px]">
-                      <ResponsiveContainer width="100%" height="100%">
-                        <BarChart data={categoryData}>
-                          <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f1f5f9" />
-                          <XAxis dataKey="name" fontSize={10} fontWeight="700" axisLine={false} tickLine={false} tick={{fill: '#94a3b8'}} />
-                          <YAxis fontSize={10} fontWeight="700" axisLine={false} tickLine={false} tick={{fill: '#94a3b8'}} />
-                          <Tooltip cursor={{fill: '#f8fafc'}} contentStyle={{borderRadius: '12px', border: 'none', boxShadow: '0 10px 15px -3px rgba(0,0,0,0.1)'}} />
-                          <Bar dataKey="value" fill="#059669" radius={[6, 6, 0, 0]} barSize={40} />
-                        </BarChart>
-                      </ResponsiveContainer>
-                   </div>
-                </section>
-
-                <section className="dash-card group">
-                   <h4 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-8 flex items-center gap-2">
-                      <span className="w-1 h-3 bg-blue-500 rounded-full"></span>
-                      Tren Konsultasi (7 Hari)
-                   </h4>
-                   <div className="h-[300px]">
-                      <ResponsiveContainer width="100%" height="100%">
-                        <AreaChart data={trendData}>
-                          <defs>
-                            <linearGradient id="colorCount" x1="0" y1="0" x2="0" y2="1">
-                              <stop offset="5%" stopColor="#059669" stopOpacity={0.1}/>
-                              <stop offset="95%" stopColor="#059669" stopOpacity={0}/>
-                            </linearGradient>
-                          </defs>
-                          <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f1f5f9" />
-                          <XAxis dataKey="date" fontSize={10} fontWeight="700" axisLine={false} tickLine={false} tick={{fill: '#94a3b8'}} />
-                          <YAxis fontSize={10} fontWeight="700" axisLine={false} tickLine={false} tick={{fill: '#94a3b8'}} />
-                          <Tooltip contentStyle={{borderRadius: '12px', border: 'none', boxShadow: '0 10px 15px -3px rgba(0,0,0,0.1)'}} />
-                          <Area type="monotone" dataKey="count" stroke="#059669" strokeWidth={3} fillOpacity={1} fill="url(#colorCount)" />
-                        </AreaChart>
-                      </ResponsiveContainer>
-                   </div>
-                </section>
-              </div>
-            </div>
+            <AnalyticsPanel allKonseling={allKonselingStats} allLaporan={allLaporan} />
           )}
 
           {activeTab === 'data-siswa' && (
@@ -450,6 +466,7 @@ function GuruDashboardContent() {
            </div>
         </div>
       )}
+      <PWAInstallPrompt />
     </div>
   );
 }

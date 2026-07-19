@@ -8,6 +8,7 @@ use App\Http\Controllers\Api\KonselingController;
 use App\Http\Controllers\Api\LaporanController;
 use App\Http\Controllers\Api\PushSubscriptionController;
 use App\Http\Controllers\Api\ChatController;
+use App\Http\Controllers\Api\SuratPanggilanController;
 
 // ============================================================
 // ROUTE PUBLIK — tidak butuh login (token)
@@ -122,4 +123,10 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/chats',               [ChatController::class, 'index']);
     Route::post('/chats',              [ChatController::class, 'store']);
     Route::post('/chats/read',         [ChatController::class, 'markAsRead']);
+
+    // Surat Panggilan
+    Route::get('/surat-panggilan',                  [SuratPanggilanController::class, 'index']);
+    Route::post('/surat-panggilan',                 [SuratPanggilanController::class, 'store']);
+    Route::patch('/surat-panggilan/{id}/status',    [SuratPanggilanController::class, 'updateStatus']);
+    Route::delete('/surat-panggilan/{id}',          [SuratPanggilanController::class, 'destroy']);
 });

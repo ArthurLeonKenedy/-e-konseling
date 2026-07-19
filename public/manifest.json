@@ -1,0 +1,31 @@
+{
+  "name": "E-Konseling SMKN 1 Pontianak",
+  "short_name": "E-Konseling",
+  "description": "Aplikasi Bimbingan dan Konseling Online SMK Negeri 1 Pontianak",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#020617",
+  "theme_color": "#064e3b",
+  "icons": [
+    {
+      "src": "/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Dashboard Siswa",
+      "url": "/siswa",
+      "description": "Buka dashboard konseling siswa"
+    }
+  ]
+}

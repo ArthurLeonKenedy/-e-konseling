@@ -269,7 +269,7 @@ export default function LoginPage() {
                             </div>
                         </div>
 
-                        <button type="submit" disabled={isLoading} className="btn btn-green-theme" style={{marginTop: '32px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', padding: '16px'}}>
+                        <button type="submit" disabled={isLoading} className="btn btn-green-theme" style={{marginTop: '32px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px'}}>
                             {isLoading ? (
                                 <>
                                     <svg className="animate-spin" width="20" height="20" fill="none" viewBox="0 0 24 24" style={{ animation: 'spin 1s linear infinite' }}>

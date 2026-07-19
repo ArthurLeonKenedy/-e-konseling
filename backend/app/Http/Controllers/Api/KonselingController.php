@@ -98,6 +98,16 @@ class KonselingController extends Controller
             'status' => 'Menunggu Konfirmasi'
         ]);
 
+        // Load relations for notification details
+        $konseling->load(['siswa', 'guru']);
+
+        // Dispatch WebPush notification to Guru
+        try {
+            $guru->notify(new \App\Notifications\NewBookingNotification($konseling));
+        } catch (\Exception $e) {
+            \Illuminate\Support\Facades\Log::error("Failed to notify guru: " . $e->getMessage());
+        }
+
         return response()->json([
             'success' => true,
             'message' => 'Permintaan konseling berhasil dikirim!',

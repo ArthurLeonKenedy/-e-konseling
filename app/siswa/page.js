@@ -5,6 +5,7 @@ import { useAuthGuard } from "../hooks/useAuthGuard";
 import NotificationBanner from "../components/NotificationBanner";
 import AvatarUpload from "../components/AvatarUpload";
 import CalendarPicker from "../components/CalendarPicker";
+import PWAInstallPrompt from "../components/PWAInstallPrompt";
 import Link from "next/link";
 import { apiFetch } from "../../lib/apiFetch";
 
@@ -22,6 +23,7 @@ function SiswaDashboardContent() {
   const [dashboardTab, setDashboardTab] = useState('aktif');
   const [unreadCounts, setUnreadCounts] = useState({});
   const [user, setUser] = useState(null);
+  const [suratPanggilan, setSuratPanggilan] = useState([]);
   
   // Booking Form State
   const [selectedSchedule, setSelectedSchedule] = useState(null);
@@ -67,6 +69,13 @@ function SiswaDashboardContent() {
         const counts = {};
         dataU.data.forEach(item => counts[item.sender_id] = item.total);
         setUnreadCounts(counts);
+      }
+
+      // Fetch Surat Panggilan
+      const resS = await apiFetch(`/api/surat-panggilan`);
+      const dataS = await resS.json();
+      if (dataS.success) {
+        setSuratPanggilan(dataS.data);
       }
     } catch (e) { console.error(e); }
   };
@@ -239,6 +248,7 @@ function SiswaDashboardContent() {
         <nav className="dash-sidebar-nav">
           <SidebarLink active={activeTab === 'dashboard'} icon={<HomeIcon />} label="Beranda" onClick={() => { setActiveTab('dashboard'); setIsSidebarOpen(false); }} />
           <SidebarLink active={activeTab === 'booking'} icon={<CalendarIcon />} label="Booking Guru" onClick={() => { setActiveTab('booking'); setIsSidebarOpen(false); }} />
+          <SidebarLink active={activeTab === 'surat-panggilan'} icon={<MailIcon />} label="Surat Panggilan" onClick={() => { setActiveTab('surat-panggilan'); setIsSidebarOpen(false); }} />
           <SidebarLink active={activeTab === 'profile'} icon={<UserIcon />} label="Profil Saya" onClick={() => { setActiveTab('profile'); setIsSidebarOpen(false); }} />
         </nav>
 
@@ -292,8 +302,22 @@ function SiswaDashboardContent() {
 
         {activeTab === 'dashboard' && (
           <div className="space-y-8 animate-slide-up">
+            {/* Warning Banner for Surat Panggilan */}
+            {suratPanggilan.some(s => s.status === 'Menunggu') && (
+              <div className="p-6 rounded-2xl bg-rose-50 border border-rose-200 shadow-lg shadow-rose-950/5 flex flex-col sm:flex-row justify-between sm:items-center gap-4 animate-pulse">
+                <div className="flex gap-4 items-start">
+                  <div className="w-12 h-12 rounded-xl bg-rose-100 flex items-center justify-center text-rose-600 text-2xl shrink-0">⚠️</div>
+                  <div>
+                    <h4 className="font-extrabold text-rose-900 text-lg">PENTING: Anda Mendapat Surat Panggilan!</h4>
+                    <p className="text-xs text-rose-700 font-medium mt-1">Anda dipanggil oleh Guru BK untuk datang berkonsultasi. Silakan buka tab Surat Panggilan untuk melihat detailnya.</p>
+                  </div>
+                </div>
+                <button onClick={() => setActiveTab('surat-panggilan')} className="px-5 py-2.5 rounded-xl bg-rose-600 text-white font-extrabold text-xs uppercase tracking-wider hover:bg-rose-700 transition-colors shrink-0">Lihat Surat</button>
+              </div>
+            )}
+
             {/* Quick Stats */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 font-sans">
               <StatCard label="Jadwal Aktif" value={myBookings.filter(b => b.status === "Terjadwal" || b.status === "Menunggu Konfirmasi").length} icon={<ClockIcon />} color="bg-emerald-50 text-emerald-600" />
               <StatCard label="Pesan Baru" value={Object.values(unreadCounts).reduce((a, b) => a + b, 0)} icon={<ChatIcon />} color="bg-blue-50 text-blue-600" />
               <StatCard label="Total Selesai" value={myBookings.filter(b => b.status === "Selesai").length} icon={<CheckIcon />} color="bg-slate-50 text-slate-600" />
@@ -469,6 +493,71 @@ function SiswaDashboardContent() {
             </form>
           </div>
         )}
+
+        {activeTab === 'surat-panggilan' && (
+          <div className="space-y-8 animate-slide-up">
+            <div>
+              <h3 className="text-2xl font-bold text-slate-900 tracking-tight">Surat Panggilan Saya</h3>
+              <p className="text-sm text-slate-500 mt-1">Daftar surat panggilan resmi yang ditujukan kepada Anda dari Guru BK.</p>
+            </div>
+
+            <div className="grid grid-cols-1 gap-6">
+              {suratPanggilan.length === 0 ? (
+                <div className="dash-card text-center py-20 text-slate-400 font-medium italic bg-slate-900/40 border border-slate-800/60">
+                  Tidak ada surat panggilan untuk Anda saat ini.
+                </div>
+              ) : (
+                suratPanggilan.map((s) => (
+                  <div key={s.id} className={`dash-card border !p-6 flex flex-col md:flex-row justify-between md:items-center gap-6 transition-all duration-300 ${
+                    s.status === 'Menunggu' 
+                      ? 'border-rose-800 bg-rose-950/20 shadow-lg shadow-rose-950/5' 
+                      : 'border-slate-800 bg-slate-900/40'
+                  }`}>
+                    <div className="space-y-4">
+                      <div className="flex flex-wrap items-center gap-3">
+                        <span className="font-mono text-xs font-bold text-emerald-400 bg-emerald-950/30 px-2.5 py-1 rounded border border-emerald-900/30">
+                          {s.nomor_surat}
+                        </span>
+                        <span className={`px-2.5 py-1 rounded-md text-[10px] font-black tracking-widest uppercase border ${
+                          s.status === "Menunggu"
+                            ? "bg-amber-950/40 text-amber-400 border-amber-900/30"
+                            : s.status === "Selesai"
+                            ? "bg-emerald-950/40 text-emerald-400 border-emerald-900/30"
+                            : "bg-red-950/40 text-red-400 border-red-900/30"
+                        }`}>
+                          {s.status}
+                        </span>
+                      </div>
+                      
+                      <div>
+                        <h4 className="text-lg font-bold text-slate-100">Panggilan dari {s.guru?.name || "Guru BK"}</h4>
+                        <p className="text-sm text-slate-400 mt-2 font-medium leading-relaxed">
+                          <span className="text-slate-300 font-bold block mb-1">Alasan Pemanggilan:</span>
+                          {s.alasan}
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex flex-col gap-2 bg-slate-950/50 p-4 rounded-xl border border-slate-800/60 min-w-[200px] shrink-0 text-xs">
+                      <div className="flex justify-between items-center">
+                        <span className="text-slate-400 font-medium">Tanggal</span>
+                        <span className="text-slate-200 font-bold">{s.tanggal_panggilan}</span>
+                      </div>
+                      <div className="flex justify-between items-center border-t border-slate-800/50 pt-2 mt-2">
+                        <span className="text-slate-400 font-medium">Jam</span>
+                        <span className="text-slate-200 font-bold">{s.waktu_panggilan} WIB</span>
+                      </div>
+                      <div className="flex justify-between items-center border-t border-slate-800/50 pt-2 mt-2">
+                        <span className="text-slate-400 font-medium">Tempat</span>
+                        <span className="text-slate-200 font-bold">Ruang BK</span>
+                      </div>
+                    </div>
+                  </div>
+                ))
+              )}
+            </div>
+          </div>
+        )}
       </main>
 
       {/* Booking Modal */}
@@ -551,9 +640,10 @@ function SiswaDashboardContent() {
                   </button>
                 </>
               )}
-           </form>
-        </div>
-      )}
+            </form>
+         </div>
+       )}
+       <PWAInstallPrompt />
     </div>
   );
 }
@@ -599,6 +689,7 @@ const LogoutIcon = () => <svg className="w-5 h-5" fill="none" stroke="currentCol
 const ClockIcon = () => <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>;
 const ChatIcon = () => <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/></svg>;
 const CheckIcon = () => <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"/></svg>;
+const MailIcon = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>;
 
 export default function SiswaDashboard() {
   return (

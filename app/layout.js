@@ -21,6 +21,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="id" className={`${outfit.variable} ${plusJakartaSans.variable} antialiased`}>
+      <head>
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="theme-color" content="#064e3b" />
+        <link rel="apple-touch-icon" href="/icon-192x192.png" />
+      </head>
       <body className="font-sans">
         <AuthProvider>
           <Toaster position="top-right" />

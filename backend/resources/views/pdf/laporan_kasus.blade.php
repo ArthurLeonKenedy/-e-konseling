@@ -30,8 +30,10 @@
     </div>
 
     <div class="title">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data={{ urlencode('https://ekonseling.smkn1pontianak.sch.id/verify/' . $laporan->id) }}" style="width: 80px; height: 80px; float: right; margin-top: -20px; border: 1px solid #ccc; padding: 2px;" alt="QR Verification" />
         <h2>LAPORAN BIMBINGAN DAN KONSELING</h2>
-        <p style="font-size: 11px;">ID Laporan: #{{ $laporan->id }} | Tanggal Cetak: {{ date('d/m/Y') }}</p>
+        <p style="font-size: 11px; font-weight: bold; margin-top: 5px; color: #111;">Nomor Dokumen: DOC/BK/SMKN1/{{ date('Y') }}/{{ str_pad($laporan->id, 6, '0', STR_PAD_LEFT) }}</p>
+        <p style="font-size: 11px; margin-top: 2px; color: #555;">Tanggal Cetak: {{ date('d/m/Y') }} | Status: {{ $laporan->status }}</p>
     </div>
 
     <div class="content">
@@ -69,10 +71,6 @@
                 <td>Tingkat Keparahan</td>
                 <td>: {{ $laporan->tingkat_keparahan }}</td>
             </tr>
-            <tr>
-                <td>Status Saat Ini</td>
-                <td>: {{ $laporan->status }}</td>
-            </tr>
         </table>
 
         <div class="section-title">C. URAIAN MASALAH</div>
@@ -87,15 +85,28 @@
     </div>
 
     <div class="footer">
-        <table>
-            <tr>
-                <td style="width: 60%;"></td>
-                <td style="text-align: center;">
+        <table style="width: 100%; border-collapse: collapse; border: none; margin-top: 40px;">
+            <tr style="border: none;">
+                <td style="width: 33%; text-align: center; border: none; font-size: 12px; vertical-align: top; padding: 0;">
+                    <p>Mengetahui,</p>
+                    <p style="font-weight: bold; margin-top: 2px;">Orang Tua / Wali Siswa,</p>
+                    <div style="height: 65px;"></div>
+                    <p class="name">( ....................................... )</p>
+                    <p style="color: #666; font-size: 10px; margin-top: 4px;">Wali dari {{ $laporan->siswa->name }}</p>
+                </td>
+                <td style="width: 34%; text-align: center; border: none; font-size: 12px; vertical-align: top; padding: 0;">
                     <p>Pontianak, {{ date('d F Y') }}</p>
-                    <p>Guru Pembimbing (BK),</p>
-                    <div class="signature-space"></div>
+                    <p style="font-weight: bold; margin-top: 2px;">Guru Bimbingan Konseling (BK),</p>
+                    <div style="height: 65px;"></div>
                     <p class="name">{{ $laporan->guru->name }}</p>
-                    <p>NIP. ..................................</p>
+                    <p style="color: #666; font-size: 10px; margin-top: 4px;">NIP. {{ $laporan->guru->nip ?? '..................................' }}</p>
+                </td>
+                <td style="width: 33%; text-align: center; border: none; font-size: 12px; vertical-align: top; padding: 0;">
+                    <p>Menyetujui,</p>
+                    <p style="font-weight: bold; margin-top: 2px;">Kepala Sekolah SMKN 1,</p>
+                    <div style="height: 65px;"></div>
+                    <p class="name">Drs. H. Wardah, M.Pd.</p>
+                    <p style="color: #666; font-size: 10px; margin-top: 4px;">NIP. 196803121995121002</p>
                 </td>
             </tr>
         </table>
